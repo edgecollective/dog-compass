@@ -80,13 +80,15 @@ void loop()
 if ((millis()-lastReading)>500) {
   u8x8.clear();
 u8x8.setCursor(0,0);
+u8x8.print("compass:");
   u8x8.print(headingDegrees);
   if (gps.location.isValid())
   {
-    u8x8.setCursor(0,2);
+    u8x8.setCursor(0,4);
     u8x8.print("lat:");
     u8x8.print(gps.location.lat(),6);
-    u8x8.setCursor(0,4);
+    u8x8.setCursor(0,6);
+    u8x8.print("lon:");
     u8x8.print(gps.location.lng(),6);
     Serial.print(gps.location.lat(), 6);
     Serial.print(F(","));
