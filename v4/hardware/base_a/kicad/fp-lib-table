@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "footprints")(type "KiCad")(uri "${KIPRJMOD}/footprints")(options "")(descr ""))
+  (lib (name "Adafruit Circuit Playground")(type "KiCad")(uri "/home/dwblair/gitwork/dog-compass/v4/hardware/reference/playground_import/Adafruit Circuit Playground.pretty")(options "")(descr ""))
+)
