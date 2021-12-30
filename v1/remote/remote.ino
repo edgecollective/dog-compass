@@ -28,9 +28,9 @@ typedef struct {
 Payload theData;
 
 // Radio pins for feather M0
-#define RFM95_CS A5
-#define RFM95_RST A4
-#define RFM95_INT A3
+#define RFM95_CS 8
+#define RFM95_RST 4
+#define RFM95_INT 3
 
 #define LED 13
 
@@ -93,7 +93,7 @@ void loop() {
     while (Serial1.available())
     {
       char c = Serial1.read();
-      // Serial.write(c); // uncomment this line if you want to see the GPS data flowing
+       //Serial.write(c); // uncomment this line if you want to see the GPS data flowing
       if (gps.encode(c)) // Did a new valid sentence come in?
         newData = true;
     }
