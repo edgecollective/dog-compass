@@ -380,8 +380,8 @@ Text Notes 2550 3825 0    79   ~ 0
 Write Permit\n
 Text GLabel 2700 4175 0    50   Input ~ 0
 A3
-Text Notes -3050 100  0    79   ~ 0
-Adafruit Sharp
+Text Notes -2050 -100 0    79   ~ 0
+Adafruit Sharp Display \n1.3"
 $Comp
 L Switch:SW_Push_Dual SW4
 U 1 1 61BD3A38
@@ -439,25 +439,8 @@ F 3 "~" H 1550 3850 50  0001 C CNN
 	1    1550 3850
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x09_Female sharp1
-U 1 1 61C52AE8
-P -2925 675
-F 0 "sharp1" V -2760 655 50  0000 C CNN
-F 1 "Conn_01x09_Female" V -2851 655 50  0000 C CNN
-F 2 "footprints:Display_adafruit_sharp_13" H -2925 675 50  0001 C CNN
-F 3 "~" H -2925 675 50  0001 C CNN
-	1    -2925 675 
-	1    0    0    -1  
-$EndComp
-Text GLabel -3125 575  0    50   Input ~ 0
+Text GLabel -1800 750  0    50   Input ~ 0
 SCK
-Text GLabel -3125 875  0    50   Input ~ 0
-EMD
-Text GLabel -3125 975  0    50   Input ~ 0
-DISP
-Text GLabel -3125 1075 0    50   Input ~ 0
-EIN
 $Comp
 L Device:R R6
 U 1 1 61C43F0B
@@ -535,9 +518,9 @@ POWER_1
 Wire Wire Line
 	1350 3850 1125 3850
 Connection ~ 1350 3850
-Text GLabel -3125 775  0    50   Input ~ 0
+Text GLabel -1800 1050 0    50   Input ~ 0
 D5
-Text GLabel -3125 675  0    50   Input ~ 0
+Text GLabel -1800 900  0    50   Input ~ 0
 MOSI
 $Comp
 L Device:Jumper_NO_Small JP3
@@ -594,34 +577,28 @@ F 3 "~" H 1375 3250 50  0001 C CNN
 	1    1375 3250
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	-3125 275  -3250 275 
 $Comp
 L power:+3V3 #PWR0118
 U 1 1 61D9297E
-P -3250 275
-F 0 "#PWR0118" H -3250 125 50  0001 C CNN
-F 1 "+3V3" V -3235 403 50  0000 L CNN
-F 2 "" H -3250 275 50  0001 C CNN
-F 3 "" H -3250 275 50  0001 C CNN
-	1    -3250 275 
+P -1800 300
+F 0 "#PWR0118" H -1800 150 50  0001 C CNN
+F 1 "+3V3" V -1785 428 50  0000 L CNN
+F 2 "" H -1800 300 50  0001 C CNN
+F 3 "" H -1800 300 50  0001 C CNN
+	1    -1800 300 
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0114
 U 1 1 61C86AD2
-P -3550 500
-F 0 "#PWR0114" H -3550 250 50  0001 C CNN
-F 1 "GND" H -3545 327 50  0000 C CNN
-F 2 "" H -3550 500 50  0001 C CNN
-F 3 "" H -3550 500 50  0001 C CNN
-	1    -3550 500 
+P -2200 600
+F 0 "#PWR0114" H -2200 350 50  0001 C CNN
+F 1 "GND" H -2195 427 50  0000 C CNN
+F 2 "" H -2200 600 50  0001 C CNN
+F 3 "" H -2200 600 50  0001 C CNN
+	1    -2200 600 
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	-3125 475  -3550 475 
-Wire Wire Line
-	-3550 475  -3550 500 
 Wire Wire Line
 	2725 4075 2700 4075
 Connection ~ 2700 4075
@@ -639,7 +616,7 @@ F 3 "~" H -1750 6675 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L remote-rescue:DIODE-RocketScreamKicadLibrary D2
+L remote-rescue:DIODE-RocketScreamKicadLibrary-remote-rescue D2
 U 1 1 61C856DC
 P -1300 6275
 F 0 "D2" V -1346 6353 50  0000 L CNN
@@ -661,7 +638,7 @@ F 3 "~" H -2100 6675 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L remote-rescue:SPEAKER_BUZZER5MM-Adafruit_Circuit_Playground-eagle-import SP1
+L remote-rescue:SPEAKER_BUZZER5MM-Adafruit_Circuit_Playground-eagle-import-remote-rescue SP1
 U 1 1 61C8B808
 P -1650 6275
 F 0 "SP1" V -1597 6223 59  0000 R CNN
@@ -703,30 +680,17 @@ Text GLabel -2250 6675 0    50   Input ~ 0
 A0
 Text GLabel -1025 4275 0    50   Input ~ 0
 A0
-$Comp
-L Connector:Conn_01x04_Female gps1
-U 1 1 61CE8D8B
-P 5050 1050
-F 0 "gps1" H 5078 1026 50  0000 L CNN
-F 1 "Conn_01x04_Female" H 5078 935 50  0000 L CNN
-F 2 "footprints:gps_neo6_blue_0" H 5050 1050 50  0001 C CNN
-F 3 "~" H 5050 1050 50  0001 C CNN
-	1    5050 1050
-	1    0    0    -1  
-$EndComp
-Text Notes 4550 850  0    79   ~ 0
-GPS NEO6M BLUE
 Text GLabel 4150 4150 0    50   Input ~ 0
 EN
 $Comp
 L mysensors_radios:RFM95HW U1
 U 1 1 61D2BB57
-P 3300 2200
-F 0 "U1" H 3300 2814 40  0000 C CNN
-F 1 "RFM95HW" H 3300 2738 40  0000 C CNN
-F 2 "footprints:RFM95" H 3300 2200 30  0001 C CIN
-F 3 "https://cdn-learn.adafruit.com/assets/assets/000/031/659/original/RFM95_96_97_98W.pdf?1460518717" H 3300 2647 60  0000 C CNN
-	1    3300 2200
+P 5450 -1050
+F 0 "U1" H 5450 -436 40  0000 C CNN
+F 1 "RFM95HW" H 5450 -512 40  0000 C CNN
+F 2 "footprints:RFM95" H 5450 -1050 30  0001 C CIN
+F 3 "https://cdn-learn.adafruit.com/assets/assets/000/031/659/original/RFM95_96_97_98W.pdf?1460518717" H 5450 -603 60  0000 C CNN
+	1    5450 -1050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -740,4 +704,156 @@ F 3 "" H -3300 2550 50  0001 C CNN
 	1    -3300 2550
 	1    0    0    -1  
 $EndComp
+$Comp
+L dog:Adafruit_IMU_BNO005 U3
+U 1 1 61D39165
+P 7350 1350
+F 0 "U3" H 7278 821 50  0000 L CNN
+F 1 "Adafruit_IMU_BNO005" H 7278 730 50  0000 L CNN
+F 2 "footprints:IMU_Ada_BNO005" H 7350 1350 50  0001 C CNN
+F 3 "" H 7350 1350 50  0001 C CNN
+	1    7350 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L dog:Adafruit_Sharp_Display_1_3 U4
+U 1 1 61D40EC2
+P -1450 50
+F 0 "U4" H -1372 -754 50  0000 L CNN
+F 1 "Adafruit_Sharp_Display_1_3" H -1372 -845 50  0000 L CNN
+F 2 "footprints:Display_adafruit_sharp_13" H -1450 50  50  0001 C CNN
+F 3 "" H -1450 50  50  0001 C CNN
+	1    -1450 50  
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1800 600  -2200 600 
+Text GLabel -3750 2300 0    50   Input ~ 0
+A0
+Text GLabel -3750 3950 0    50   Input ~ 0
+DW
+Text GLabel -2850 2750 2    50   Input ~ 0
+D9
+Text GLabel -3750 2750 0    50   Input ~ 0
+A3
+Text GLabel -3750 3050 0    50   Input ~ 0
+A5
+Text GLabel -3750 2900 0    50   Input ~ 0
+A4
+Text GLabel -2850 3200 2    50   Input ~ 0
+SCL
+Text GLabel -2850 3350 2    50   Input ~ 0
+SDA
+$Comp
+L dog:neo-6m-black U5
+U 1 1 61D7113B
+P 2900 800
+F 0 "U5" H 3128 496 50  0000 L CNN
+F 1 "neo-6m-black" H 3128 405 50  0000 L CNN
+F 2 "footprints:gps_neo6m_black" H 2900 800 50  0001 C CNN
+F 3 "" H 2900 800 50  0001 C CNN
+	1    2900 800 
+	1    0    0    -1  
+$EndComp
+Text Notes 2450 700  0    79   ~ 0
+GPS NEO6M BLACK
+Text Notes 6650 1250 0    79   ~ 0
+COMPASS
+Text Notes -3900 1250 0    79   ~ 0
+FEATHER
+Text GLabel -3750 3650 0    50   Input ~ 0
+RX_D0
+Text GLabel -3750 3800 0    50   Input ~ 0
+TX_D1
+Text GLabel 2700 1050 0    50   Input ~ 0
+RX_D0
+Text GLabel 2700 1150 0    50   Input ~ 0
+TX_D1
+$Comp
+L power:+3V3 #PWR0101
+U 1 1 61D83F21
+P 2200 1350
+F 0 "#PWR0101" H 2200 1200 50  0001 C CNN
+F 1 "+3V3" V 2215 1478 50  0000 L CNN
+F 2 "" H 2200 1350 50  0001 C CNN
+F 3 "" H 2200 1350 50  0001 C CNN
+	1    2200 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 1350 2200 1350
+Wire Wire Line
+	2700 1250 2550 1250
+Wire Wire Line
+	2550 1250 2550 1450
+Text GLabel 6800 2000 0    50   Input ~ 0
+SCL
+Text GLabel 6800 2150 0    50   Input ~ 0
+SDA
+Text GLabel 2550 1450 0    50   Input ~ 0
+POWER_1
+$Comp
+L device:Antenna_Shield AE1
+U 1 1 61D92C44
+P 5250 -2000
+F 0 "AE1" H 5394 -1961 50  0000 L CNN
+F 1 "Antenna_Shield" H 5394 -2052 50  0000 L CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 5250 -1900 50  0001 C CNN
+F 3 "" H 5250 -1900 50  0001 C CNN
+	1    5250 -2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 61DE7962
+P 3850 6975
+F 0 "R7" H 3920 7021 50  0000 L CNN
+F 1 "4.7K" H 3920 6930 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 3780 6975 50  0001 C CNN
+F 3 "~" H 3850 6975 50  0001 C CNN
+	1    3850 6975
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0104
+U 1 1 61DE7C60
+P 3850 6825
+F 0 "#PWR0104" H 3850 6675 50  0001 C CNN
+F 1 "+3V3" H 3865 6998 50  0000 C CNN
+F 2 "" H 3850 6825 50  0001 C CNN
+F 3 "" H 3850 6825 50  0001 C CNN
+	1    3850 6825
+	1    0    0    -1  
+$EndComp
+Text Notes 3950 6575 0    79   ~ 0
+BUTTON B
+$Comp
+L Switch:SW_Push SW3
+U 1 1 61DE7C6B
+P 4300 7125
+F 0 "SW3" H 4300 7410 50  0000 C CNN
+F 1 "SW_Push" H 4300 7319 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS" H 4300 7325 50  0001 C CNN
+F 3 "~" H 4300 7325 50  0001 C CNN
+	1    4300 7125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 61DE7C75
+P 4500 7125
+F 0 "#PWR0108" H 4500 6875 50  0001 C CNN
+F 1 "GND" H 4505 6952 50  0000 C CNN
+F 2 "" H 4500 7125 50  0001 C CNN
+F 3 "" H 4500 7125 50  0001 C CNN
+	1    4500 7125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 7125 3850 7125
+Text GLabel 3600 7125 0    50   Input ~ 0
+A2
+Wire Wire Line
+	3850 7125 3600 7125
+Connection ~ 3850 7125
 $EndSCHEMATC
