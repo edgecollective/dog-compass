@@ -1,0 +1,11 @@
+(sym_lib_table
+  (lib (name device)(type Legacy)(uri ${KIPRJMOD}/symbols/device.lib)(options "")(descr ""))
+  (lib (name ESP32-footprints-Shem-Lib)(type Legacy)(uri ${KIPRJMOD}/symbols/ESP32-footprints-Shem-Lib.lib)(options "")(descr ""))
+  (lib (name mysensors_radios)(type Legacy)(uri ${KIPRJMOD}/symbols/mysensors_radios.lib)(options "")(descr ""))
+  (lib (name rotary_2010)(type Legacy)(uri ${KIPRJMOD}/symbols/rotary_2010.lib)(options "")(descr ""))
+  (lib (name Adafruit_AirLift_FeatherWing-eagle-import)(type Legacy)(uri ${KIPRJMOD}/symbols/Adafruit_AirLift_FeatherWing-eagle-import.lib)(options "")(descr "")(disabled))
+  (lib (name Adafruit_Circuit_Playground-eagle-import)(type Legacy)(uri /home/dwblair/gitwork/co2-monitor/REV_V/hardware/playground_import/Adafruit_Circuit_Playground-eagle-import.lib)(options "")(descr "")(disabled))
+  (lib (name remote-rescue)(type Legacy)(uri ${KIPRJMOD}/remote-rescue.lib)(options "")(descr ""))
+  (lib (name remote)(type Legacy)(uri ${KIPRJMOD}/remote.lib)(options "")(descr ""))
+  (lib (name dog)(type Legacy)(uri /home/dwblair/gitwork/dog-compass/v4/hardware/reference/dog.lib)(options "")(descr ""))
+)

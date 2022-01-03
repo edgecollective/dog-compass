@@ -1553,6 +1553,7 @@
   (gr_line (start 56.6303 126.7218) (end 56.6303 110.8918) (layer "F.SilkS") (width 0.12) (tstamp 8f1dc54c-5f6d-4a44-a54e-eb0310df6ec9))
   (gr_rect (start 45.2882 70.104) (end 71.9582 49.784) (layer "F.SilkS") (width 0.12) (fill none) (tstamp b195ee05-4e87-4efb-bd15-68c48d1ca996))
   (gr_rect (start 80.2132 37.1094) (end 58.3184 16.2052) (layer "Dwgs.User") (width 0.1) (fill none) (tstamp 47b9770d-1537-4f1e-b437-51f130606e21))
+  (gr_rect (start 85.5726 11.8872) (end 110.744 37.0586) (layer "Dwgs.User") (width 0.05) (fill none) (tstamp c47a313b-bf33-4880-b903-6c3a1ba98739))
   (gr_poly
     (pts
 
