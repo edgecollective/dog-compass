@@ -793,17 +793,6 @@ SDA
 Text GLabel 2550 1450 0    50   Input ~ 0
 POWER_1
 $Comp
-L device:Antenna_Shield AE1
-U 1 1 61D92C44
-P 5250 -2000
-F 0 "AE1" H 5394 -1961 50  0000 L CNN
-F 1 "Antenna_Shield" H 5394 -2052 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 5250 -1900 50  0001 C CNN
-F 3 "" H 5250 -1900 50  0001 C CNN
-	1    5250 -2000
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R7
 U 1 1 61DE7962
 P 3850 6975
@@ -856,4 +845,30 @@ A2
 Wire Wire Line
 	3850 7125 3600 7125
 Connection ~ 3850 7125
+$Comp
+L Connector:Conn_Coaxial J1
+U 1 1 61DED342
+P 4800 -2150
+F 0 "J1" H 4900 -2175 50  0000 L CNN
+F 1 "Conn_Coaxial" H 4900 -2266 50  0000 L CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132134_Vertical" H 4800 -2150 50  0001 C CNN
+F 3 " ~" H 4800 -2150 50  0001 C CNN
+	1    4800 -2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 -1200 4600 -1200
+Wire Wire Line
+	4600 -1200 4600 -2150
+$Comp
+L power:GND #PWR0109
+U 1 1 61D58311
+P 4800 -1950
+F 0 "#PWR0109" H 4800 -2200 50  0001 C CNN
+F 1 "GND" H 4805 -2123 50  0000 C CNN
+F 2 "" H 4800 -1950 50  0001 C CNN
+F 3 "" H 4800 -1950 50  0001 C CNN
+	1    4800 -1950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

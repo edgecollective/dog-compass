@@ -8,4 +8,5 @@
   (lib (name remote-rescue)(type Legacy)(uri ${KIPRJMOD}/remote-rescue.lib)(options "")(descr ""))
   (lib (name remote)(type Legacy)(uri ${KIPRJMOD}/remote.lib)(options "")(descr ""))
   (lib (name dog)(type Legacy)(uri /home/dwblair/gitwork/dog-compass/v4/hardware/reference/dog.lib)(options "")(descr ""))
+  (lib (name SMA_CONNECTOR)(type Legacy)(uri /home/dwblair/gitwork/dog-compass/v4/hardware/reference/SMA_CONNECTOR.lib)(options "")(descr ""))
 )
