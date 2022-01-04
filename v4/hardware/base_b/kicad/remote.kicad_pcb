@@ -381,7 +381,7 @@
   )
 
   (module Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS (layer F.Cu) (tedit 5A02FE31) (tstamp 61D65216)
-    (at 15.33144 10.3505 270)
+    (at 15.10538 10.3505 270)
     (descr "tactile switch SPST right angle, PTS645VL58-2 LFS")
     (tags "tactile switch SPST angled PTS645VL58-2 LFS C&K Button")
     (path /61DE7C6B)
@@ -870,7 +870,7 @@
   )
 
   (module Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS (layer F.Cu) (tedit 5A02FE31) (tstamp 61D65285)
-    (at 15.33144 0.3937 270)
+    (at 15.10538 0.3937 270)
     (descr "tactile switch SPST right angle, PTS645VL58-2 LFS")
     (tags "tactile switch SPST angled PTS645VL58-2 LFS C&K Button")
     (path /612CCB02)
@@ -926,7 +926,7 @@
   )
 
   (module Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx58-2LFS (layer F.Cu) (tedit 5A02FE31) (tstamp 61D5EA0E)
-    (at 15.3543 -13.41628 270)
+    (at 15.10538 -13.41628 270)
     (descr "tactile switch SPST right angle, PTS645VL58-2 LFS")
     (tags "tactile switch SPST angled PTS645VL58-2 LFS C&K Button")
     (path /612C3561)
@@ -982,7 +982,7 @@
   )
 
   (module "Adafruit Circuit Playground:BUZZER_SMT_5MM" (layer F.Cu) (tedit 0) (tstamp 61CE283B)
-    (at 10.58926 -20.98802 180)
+    (at 6.81736 -20.8788 180)
     (path /61C8B808)
     (fp_text reference SP1 (at 0 0) (layer F.SilkS) hide
       (effects (font (size 1.27 1.27) (thickness 0.15)))
@@ -1594,7 +1594,7 @@
   )
 
   (module Diode_THT:D_5W_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE50CD5) (tstamp 61D61AE2)
-    (at 11.71702 64.20612 90)
+    (at 11.81354 51.51374 270)
     (descr "Diode, 5W series, Axial, Horizontal, pin pitch=12.7mm, , length*diameter=8.9*3.7mm^2, , http://www.diodes.com/_files/packages/8686949.gif")
     (tags "Diode 5W series Axial Horizontal pin pitch 12.7mm  length 8.9mm diameter 3.7mm")
     (path /61C856DC)
@@ -1635,9 +1635,9 @@
     (fp_line (start -1.65 2.1) (end 14.35 2.1) (layer F.CrtYd) (width 0.05))
     (fp_line (start 14.35 2.1) (end 14.35 -2.1) (layer F.CrtYd) (width 0.05))
     (fp_line (start 14.35 -2.1) (end -1.65 -2.1) (layer F.CrtYd) (width 0.05))
-    (pad 1 thru_hole rect (at 0 0 90) (size 2.8 2.8) (drill 1.4) (layers *.Cu *.Mask)
+    (pad 1 thru_hole rect (at 0 0 270) (size 2.8 2.8) (drill 1.4) (layers *.Cu *.Mask)
       (net 3 +3V3))
-    (pad 2 thru_hole oval (at 12.7 0 90) (size 2.8 2.8) (drill 1.4) (layers *.Cu *.Mask)
+    (pad 2 thru_hole oval (at 12.7 0 270) (size 2.8 2.8) (drill 1.4) (layers *.Cu *.Mask)
       (net 2 "Net-(D2-Pad2)"))
     (model ${KISYS3DMOD}/Diode_THT.3dshapes/D_5W_P12.70mm_Horizontal.wrl
       (at (xyz 0 0 0))
