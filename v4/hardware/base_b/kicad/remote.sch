@@ -228,8 +228,6 @@ F 3 "~" H 10600 3800 50  0001 C CNN
 	1    10600 3800
 	1    0    0    -1  
 $EndComp
-Text Notes 9775 3450 0    79   ~ 0
-i2c breakout
 $Comp
 L Mechanical:MountingHole_Pad H1
 U 1 1 614A1FDA
@@ -453,7 +451,7 @@ POWER_1
 Wire Wire Line
 	5100 4850 4875 4850
 Connection ~ 5100 4850
-Text GLabel 1350 3500 0    50   Input ~ 0
+Text GLabel 2900 4500 2    50   Input ~ 0
 A0
 Text GLabel 1350 3350 0    50   Input ~ 0
 MOSI
@@ -800,12 +798,12 @@ Text GLabel 2000 6550 2    50   Input ~ 0
 D5
 Text GLabel 2000 6400 2    50   Input ~ 0
 D6
-Text GLabel 2800 1900 0    50   Input ~ 0
+Text GLabel 1350 3500 0    50   Input ~ 0
 D5
 Text GLabel 2800 2400 0    50   Input ~ 0
 D6
 Text GLabel 3900 1850 2    50   Input ~ 0
-D9
+D12
 Text GLabel 2000 6100 2    50   Input ~ 0
 D10
 Text GLabel 2000 5950 2    50   Input ~ 0
@@ -854,27 +852,10 @@ Text GLabel 1100 5200 0    50   Input ~ 0
 ~RESET
 Wire Wire Line
 	550  5350 1100 5350
-$Comp
-L device:Jumper_NO_Small JP2
-U 1 1 61E9417E
-P 4000 1950
-F 0 "JP2" H 4000 2135 50  0000 C CNN
-F 1 "Jumper_NO_Small" V 4200 1600 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 4000 1950 50  0001 C CNN
-F 3 "" H 4000 1950 50  0001 C CNN
-	1    4000 1950
-	1    0    0    -1  
-$EndComp
-Text GLabel 4100 1950 2    50   Input ~ 0
-D10
-Text GLabel 2900 4600 2    50   Input ~ 0
-D13
 Text GLabel 2900 4700 2    50   Input ~ 0
-D12
-Text GLabel 2900 4800 2    50   Input ~ 0
+D13
+Text GLabel 2800 1900 0    50   Input ~ 0
 D11
-Text GLabel 2900 4500 2    50   Input ~ 0
-A1
 $Comp
 L power:+3V3 #PWR0117
 U 1 1 61F6A488
@@ -907,49 +888,6 @@ F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 2700 4700 50 
 F 3 "~" H 2700 4700 50  0001 C CNN
 	1    2700 4700
 	-1   0    0    1   
-$EndComp
-Text Notes 8175 4775 0    79   ~ 0
-QWIIC
-$Comp
-L Connector:Conn_01x04_Female J3
-U 1 1 61F816B3
-P 9000 5125
-F 0 "J3" H 9028 5101 50  0000 L CNN
-F 1 "Conn_01x04_Female" V 9175 4675 50  0000 L CNN
-F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 9000 5125 50  0001 C CNN
-F 3 "~" H 9000 5125 50  0001 C CNN
-	1    9000 5125
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8800 5125 8625 5125
-Wire Wire Line
-	8800 5025 8400 5025
-Text GLabel 8800 5325 0    50   Input ~ 0
-SCL
-Text GLabel 8800 5225 0    50   Input ~ 0
-SDA
-$Comp
-L power:+3V3 #PWR0120
-U 1 1 61F816C1
-P 8625 5125
-F 0 "#PWR0120" H 8625 4975 50  0001 C CNN
-F 1 "+3V3" H 8640 5298 50  0000 C CNN
-F 2 "" H 8625 5125 50  0001 C CNN
-F 3 "" H 8625 5125 50  0001 C CNN
-	1    8625 5125
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0121
-U 1 1 61F816CB
-P 8400 5025
-F 0 "#PWR0121" H 8400 4775 50  0001 C CNN
-F 1 "GND" H 8405 4852 50  0000 C CNN
-F 2 "" H 8400 5025 50  0001 C CNN
-F 3 "" H 8400 5025 50  0001 C CNN
-	1    8400 5025
-	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0122
@@ -990,4 +928,51 @@ F 3 "~" H 4550 7100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4350 7100 3950 7100
+$Comp
+L power:GND #PWR0124
+U 1 1 6207EF12
+P 3250 2700
+F 0 "#PWR0124" H 3250 2450 50  0001 C CNN
+F 1 "GND" H 3255 2527 50  0000 C CNN
+F 2 "" H 3250 2700 50  0001 C CNN
+F 3 "" H 3250 2700 50  0001 C CNN
+	1    3250 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 2700 3350 2700
+Connection ~ 3250 2700
+Wire Wire Line
+	3350 2700 3450 2700
+Connection ~ 3350 2700
+$Comp
+L device:Jumper_NO_Small JP2
+U 1 1 61E9417E
+P 4000 1950
+F 0 "JP2" H 4000 2135 50  0000 C CNN
+F 1 "Jumper_NO_Small" V 4200 1600 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 4000 1950 50  0001 C CNN
+F 3 "" H 4000 1950 50  0001 C CNN
+	1    4000 1950
+	1    0    0    -1  
+$EndComp
+Text GLabel 2900 4800 2    50   Input ~ 0
+D10
+Text GLabel 2900 4600 2    50   Input ~ 0
+A1
+Text GLabel 4100 1950 2    50   Input ~ 0
+A0
+Text Notes 9775 3450 0    79   ~ 0
+i2c breakout / optional oled display
+$Comp
+L power:+3V3 #PWR?
+U 1 1 6216FD88
+P 3350 1500
+F 0 "#PWR?" H 3350 1350 50  0001 C CNN
+F 1 "+3V3" V 3365 1628 50  0000 L CNN
+F 2 "" H 3350 1500 50  0001 C CNN
+F 3 "" H 3350 1500 50  0001 C CNN
+	1    3350 1500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
