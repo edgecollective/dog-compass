@@ -64,10 +64,10 @@ SDA
 Text Notes 5600 5625 0    79   ~ 0
 i2c pullups
 $Comp
-L Device:R R3
+L Device:R R5
 U 1 1 6028DEF2
 P 6650 2575
-F 0 "R3" H 6720 2621 50  0000 L CNN
+F 0 "R5" H 6720 2621 50  0000 L CNN
 F 1 "4.7K" H 6720 2530 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 6580 2575 50  0001 C CNN
 F 3 "~" H 6650 2575 50  0001 C CNN
@@ -88,10 +88,10 @@ $EndComp
 Text Notes 6675 900  0    79   ~ 0
 BUTTON A
 $Comp
-L Device:R R4
+L Device:R R6
 U 1 1 60FBA6C0
 P 6575 1300
-F 0 "R4" H 6645 1346 50  0000 L CNN
+F 0 "R6" H 6645 1346 50  0000 L CNN
 F 1 "4.7K" H 6645 1255 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 6505 1300 50  0001 C CNN
 F 3 "~" H 6575 1300 50  0001 C CNN
@@ -303,39 +303,28 @@ SDA
 $Comp
 L power:GND #PWR0107
 U 1 1 6193871C
-P 3925 7425
-F 0 "#PWR0107" H 3925 7175 50  0001 C CNN
-F 1 "GND" H 3930 7252 50  0000 C CNN
-F 2 "" H 3925 7425 50  0001 C CNN
-F 3 "" H 3925 7425 50  0001 C CNN
-	1    3925 7425
+P 3950 7400
+F 0 "#PWR0107" H 3950 7150 50  0001 C CNN
+F 1 "GND" H 3955 7227 50  0000 C CNN
+F 2 "" H 3950 7400 50  0001 C CNN
+F 3 "" H 3950 7400 50  0001 C CNN
+	1    3950 7400
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R5
+L Device:R R8
 U 1 1 6193A6F6
-P 3925 7275
-F 0 "R5" H 3995 7321 50  0000 L CNN
-F 1 "R" H 3995 7230 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 3855 7275 50  0001 C CNN
-F 3 "~" H 3925 7275 50  0001 C CNN
-	1    3925 7275
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x03_Female J19
-U 1 1 61938716
-P 4450 7125
-F 0 "J19" H 4478 7151 50  0000 L CNN
-F 1 "Conn_01x03_Female" H 4478 7060 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 4450 7125 50  0001 C CNN
-F 3 "~" H 4450 7125 50  0001 C CNN
-	1    4450 7125
+P 3950 7250
+F 0 "R8" H 4020 7296 50  0000 L CNN
+F 1 "R" H 4020 7205 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 3880 7250 50  0001 C CNN
+F 3 "~" H 3950 7250 50  0001 C CNN
+	1    3950 7250
 	1    0    0    -1  
 $EndComp
 Text Notes 4100 6875 0    79   ~ 0
 Write Permit\n
-Text GLabel 4250 7225 0    50   Input ~ 0
+Text GLabel 4350 7200 0    50   Input ~ 0
 A5
 Text Notes 1100 2350 0    79   ~ 0
 Adafruit Sharp Display \n1.3"
@@ -399,10 +388,10 @@ $EndComp
 Text GLabel 1350 3200 0    50   Input ~ 0
 SCK
 $Comp
-L Device:R R6
+L Device:R R3
 U 1 1 61C43F0B
 P 5100 5000
-F 0 "R6" H 5170 5046 50  0000 L CNN
+F 0 "R3" H 5170 5046 50  0000 L CNN
 F 1 "10K" H 5170 4955 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5030 5000 50  0001 C CNN
 F 3 "~" H 5100 5000 50  0001 C CNN
@@ -541,11 +530,6 @@ F 3 "" H 950 3050 50  0001 C CNN
 	1    950  3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4275 7125 4250 7125
-Connection ~ 4250 7125
-Wire Wire Line
-	4250 7125 3925 7125
 $Comp
 L Device:Q_NPN_EBC Q3
 U 1 1 61C856D6
@@ -558,10 +542,10 @@ F 3 "~" H 3400 5925 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L remote-rescue:DIODE-RocketScreamKicadLibrary-remote-rescue D2
+L remote-rescue:DIODE-RocketScreamKicadLibrary-remote-rescue D1
 U 1 1 61C856DC
 P 3850 5525
-F 0 "D2" V 3804 5603 50  0000 L CNN
+F 0 "D1" V 3804 5603 50  0000 L CNN
 F 1 "DIODE" V 3895 5603 50  0000 L CNN
 F 2 "Diode_THT:D_5W_P12.70mm_Horizontal" H 3850 5325 60  0001 C CNN
 F 3 "" H 3850 5525 60  0000 C CNN
@@ -569,10 +553,10 @@ F 3 "" H 3850 5525 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R8
+L Device:R R7
 U 1 1 61C856E2
 P 3050 5925
-F 0 "R8" V 2843 5925 50  0000 C CNN
+F 0 "R7" V 2843 5925 50  0000 C CNN
 F 1 "R" V 2934 5925 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 2980 5925 50  0001 C CNN
 F 3 "~" H 3050 5925 50  0001 C CNN
@@ -733,10 +717,10 @@ SDA
 Text GLabel 5000 2500 0    50   Input ~ 0
 POWER_1
 $Comp
-L Device:R R7
+L Device:R R4
 U 1 1 61DE7962
 P 6700 3775
-F 0 "R7" H 6770 3821 50  0000 L CNN
+F 0 "R4" H 6770 3821 50  0000 L CNN
 F 1 "4.7K" H 6770 3730 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 6630 3775 50  0001 C CNN
 F 3 "~" H 6700 3775 50  0001 C CNN
@@ -935,4 +919,86 @@ F 3 "~" H 2700 4700 50  0001 C CNN
 	1    2700 4700
 	-1   0    0    1   
 $EndComp
+Text Notes 8175 4775 0    79   ~ 0
+QWIIC
+$Comp
+L Connector:Conn_01x04_Female J3
+U 1 1 61F816B3
+P 9000 5125
+F 0 "J3" H 9028 5101 50  0000 L CNN
+F 1 "Conn_01x04_Female" V 9175 4675 50  0000 L CNN
+F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 9000 5125 50  0001 C CNN
+F 3 "~" H 9000 5125 50  0001 C CNN
+	1    9000 5125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 5125 8625 5125
+Wire Wire Line
+	8800 5025 8400 5025
+Text GLabel 8800 5325 0    50   Input ~ 0
+SCL
+Text GLabel 8800 5225 0    50   Input ~ 0
+SDA
+$Comp
+L power:+3V3 #PWR0120
+U 1 1 61F816C1
+P 8625 5125
+F 0 "#PWR0120" H 8625 4975 50  0001 C CNN
+F 1 "+3V3" H 8640 5298 50  0000 C CNN
+F 2 "" H 8625 5125 50  0001 C CNN
+F 3 "" H 8625 5125 50  0001 C CNN
+	1    8625 5125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 61F816CB
+P 8400 5025
+F 0 "#PWR0121" H 8400 4775 50  0001 C CNN
+F 1 "GND" H 8405 4852 50  0000 C CNN
+F 2 "" H 8400 5025 50  0001 C CNN
+F 3 "" H 8400 5025 50  0001 C CNN
+	1    8400 5025
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 6201B316
+P 8600 1500
+F 0 "#PWR0122" H 8600 1250 50  0001 C CNN
+F 1 "GND" H 8605 1327 50  0000 C CNN
+F 2 "" H 8600 1500 50  0001 C CNN
+F 3 "" H 8600 1500 50  0001 C CNN
+	1    8600 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0123
+U 1 1 6201B81A
+P 8600 1200
+F 0 "#PWR0123" H 8600 1050 50  0001 C CNN
+F 1 "+3V3" H 8615 1373 50  0000 C CNN
+F 2 "" H 8600 1200 50  0001 C CNN
+F 3 "" H 8600 1200 50  0001 C CNN
+	1    8600 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 1200 8600 1200
+Wire Wire Line
+	8950 1500 8600 1500
+$Comp
+L Connector:Conn_01x03_Female J19
+U 1 1 61938716
+P 4550 7100
+F 0 "J19" H 4578 7126 50  0000 L CNN
+F 1 "Conn_01x03_Female" H 4578 7035 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 4550 7100 50  0001 C CNN
+F 3 "~" H 4550 7100 50  0001 C CNN
+	1    4550 7100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 7100 3950 7100
 $EndSCHEMATC
