@@ -456,7 +456,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 61D42A5F)
-    (at -6.887136 63.94192 90)
+    (at -7.607136 63.98192 90)
     (descr "Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm")
     (path /61DE7962)
@@ -1026,7 +1026,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 61CE282E)
-    (at 5.285268 63.94192 90)
+    (at 4.565268 63.98192 90)
     (descr "Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm")
     (path /61C856E2)
@@ -1067,7 +1067,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 61D6F759)
-    (at -10.944604 63.94192 90)
+    (at -11.664604 63.98192 90)
     (descr "Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm")
     (path /61C43F0B)
@@ -1108,7 +1108,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 61CE27E9)
-    (at 1.2278 63.94192 90)
+    (at 0.5078 63.98192 90)
     (descr "Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm")
     (path /60FBA6C0)
@@ -1149,7 +1149,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 61CE27D2)
-    (at -2.829668 63.94192 90)
+    (at -3.549668 63.98192 90)
     (descr "Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm")
     (path /6028DEF2)
@@ -1190,7 +1190,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 61CE27BB)
-    (at -15.002072 51.24192 270)
+    (at -15.722072 51.28192 270)
     (descr "Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm")
     (path /5F98BC9A)
@@ -1231,7 +1231,7 @@
   )
 
   (module Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE5139B) (tstamp 61CE27A4)
-    (at -19.05954 51.24192 270)
+    (at -19.77954 51.28192 270)
     (descr "Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm")
     (path /5F989DB1)
@@ -1574,7 +1574,7 @@
   )
 
   (module Diode_THT:D_5W_P12.70mm_Horizontal (layer F.Cu) (tedit 5AE50CD5) (tstamp 61D61AE2)
-    (at 11.07 51.82 270)
+    (at 10.09 51.89 270)
     (descr "Diode, 5W series, Axial, Horizontal, pin pitch=12.7mm, , length*diameter=8.9*3.7mm^2, , http://www.diodes.com/_files/packages/8686949.gif")
     (tags "Diode 5W series Axial Horizontal pin pitch 12.7mm  length 8.9mm diameter 3.7mm")
     (path /61C856DC)
@@ -1632,7 +1632,7 @@
   (gr_text SDA (at 13.92 -22.86 90) (layer F.SilkS) (tstamp 61D7500C)
     (effects (font (size 1.5 1.5) (thickness 0.2)))
   )
-  (gr_text GND (at -24.42 72.73 90) (layer F.SilkS) (tstamp 61D75001)
+  (gr_text GND (at -24.3 72.77 90) (layer F.SilkS) (tstamp 61D75001)
     (effects (font (size 1.5 1.5) (thickness 0.2)))
   )
   (gr_text 3V (at 13.74 72.25 90) (layer F.SilkS) (tstamp 61D74FEB)
