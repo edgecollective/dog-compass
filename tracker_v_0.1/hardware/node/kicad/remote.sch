@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Device:R R1
+L Device:R R2
 U 1 1 5F989DB1
 P 5725 6150
-F 0 "R1" H 5795 6196 50  0000 L CNN
+F 0 "R2" H 5795 6196 50  0000 L CNN
 F 1 "4.7K" H 5795 6105 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 5655 6150 50  0001 C CNN
 F 3 "~" H 5725 6150 50  0001 C CNN
@@ -38,10 +38,10 @@ F 3 "" H 5725 6000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R2
+L Device:R R1
 U 1 1 5F98BC9A
 P 6100 6175
-F 0 "R2" H 6170 6221 50  0000 L CNN
+F 0 "R1" H 6170 6221 50  0000 L CNN
 F 1 "4.7K" H 6170 6130 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 6030 6175 50  0001 C CNN
 F 3 "~" H 6100 6175 50  0001 C CNN
@@ -102,47 +102,47 @@ Text Notes 4100 6875 0    79   ~ 0
 Write Permit\n
 Text GLabel 4350 7200 0    50   Input ~ 0
 A5
-Text Notes 9725 4775 0    79   ~ 0
+Text Notes 7075 3375 0    79   ~ 0
 QWIIC
 $Comp
 L Connector:Conn_01x04_Female J20
 U 1 1 61C7347D
-P 10550 5125
-F 0 "J20" H 10578 5101 50  0000 L CNN
-F 1 "Conn_01x04_Female" V 10725 4675 50  0000 L CNN
-F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 10550 5125 50  0001 C CNN
-F 3 "~" H 10550 5125 50  0001 C CNN
-	1    10550 5125
+P 7900 3725
+F 0 "J20" H 7928 3701 50  0000 L CNN
+F 1 "Conn_01x04_Female" V 8075 3275 50  0000 L CNN
+F 2 "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal" H 7900 3725 50  0001 C CNN
+F 3 "~" H 7900 3725 50  0001 C CNN
+	1    7900 3725
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10350 5125 10175 5125
+	7700 3725 7525 3725
 Wire Wire Line
-	10350 5025 9950 5025
-Text GLabel 10350 5325 0    50   Input ~ 0
+	7700 3625 7300 3625
+Text GLabel 7700 3925 0    50   Input ~ 0
 SCL
-Text GLabel 10350 5225 0    50   Input ~ 0
+Text GLabel 7700 3825 0    50   Input ~ 0
 SDA
 $Comp
 L power:+3V3 #PWR0112
 U 1 1 61C7348B
-P 10175 5125
-F 0 "#PWR0112" H 10175 4975 50  0001 C CNN
-F 1 "+3V3" H 10190 5298 50  0000 C CNN
-F 2 "" H 10175 5125 50  0001 C CNN
-F 3 "" H 10175 5125 50  0001 C CNN
-	1    10175 5125
+P 7525 3725
+F 0 "#PWR0112" H 7525 3575 50  0001 C CNN
+F 1 "+3V3" H 7540 3898 50  0000 C CNN
+F 2 "" H 7525 3725 50  0001 C CNN
+F 3 "" H 7525 3725 50  0001 C CNN
+	1    7525 3725
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0113
 U 1 1 61C73495
-P 9950 5025
-F 0 "#PWR0113" H 9950 4775 50  0001 C CNN
-F 1 "GND" H 9955 4852 50  0000 C CNN
-F 2 "" H 9950 5025 50  0001 C CNN
-F 3 "" H 9950 5025 50  0001 C CNN
-	1    9950 5025
+P 7300 3625
+F 0 "#PWR0113" H 7300 3375 50  0001 C CNN
+F 1 "GND" H 7305 3452 50  0000 C CNN
+F 2 "" H 7300 3625 50  0001 C CNN
+F 3 "" H 7300 3625 50  0001 C CNN
+	1    7300 3625
 	1    0    0    -1  
 $EndComp
 Text GLabel 5700 7200 0    50   Input ~ 0
@@ -270,7 +270,7 @@ D6
 Text GLabel 2800 2400 0    50   Input ~ 0
 D6
 Text GLabel 3900 1850 2    50   Input ~ 0
-D12
+D9
 Text GLabel 2000 6100 2    50   Input ~ 0
 D10
 Text GLabel 2000 5950 2    50   Input ~ 0
@@ -320,7 +320,7 @@ Text GLabel 1100 5200 0    50   Input ~ 0
 Wire Wire Line
 	550  5350 1100 5350
 Text GLabel 2800 1900 0    50   Input ~ 0
-D11
+D5
 $Comp
 L Connector:Conn_01x03_Female J19
 U 1 1 61938716
@@ -351,19 +351,6 @@ Connection ~ 3250 2700
 Wire Wire Line
 	3350 2700 3450 2700
 Connection ~ 3350 2700
-$Comp
-L device:Jumper_NO_Small JP2
-U 1 1 61E9417E
-P 4000 1950
-F 0 "JP2" H 4000 2135 50  0000 C CNN
-F 1 "Jumper_NO_Small" V 4200 1600 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 4000 1950 50  0001 C CNN
-F 3 "" H 4000 1950 50  0001 C CNN
-	1    4000 1950
-	1    0    0    -1  
-$EndComp
-Text GLabel 4100 1950 2    50   Input ~ 0
-A0
 $Comp
 L power:+3V3 #PWR0104
 U 1 1 6216FD88
@@ -431,7 +418,7 @@ F 3 "" H 5100 5150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4875 4850 0    50   Input ~ 0
-D9
+A4
 Connection ~ 5100 5150
 $Comp
 L Device:R R3
@@ -456,4 +443,45 @@ F 3 "~" H 5300 4850 50  0001 C CNN
 	1    5300 4850
 	1    0    0    -1  
 $EndComp
+Text GLabel 3900 1950 2    50   Input ~ 0
+A3
+$Comp
+L Connector:Conn_01x05_Female J2
+U 1 1 61EF5D35
+P 2700 3950
+F 0 "J2" H 2728 3976 50  0000 L CNN
+F 1 "Conn_01x05_Female" H 2728 3885 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical" H 2700 3950 50  0001 C CNN
+F 3 "~" H 2700 3950 50  0001 C CNN
+	1    2700 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR0105
+U 1 1 61EF638E
+P 2500 3750
+F 0 "#PWR0105" H 2500 3600 50  0001 C CNN
+F 1 "+3V3" V 2515 3878 50  0000 L CNN
+F 2 "" H 2500 3750 50  0001 C CNN
+F 3 "" H 2500 3750 50  0001 C CNN
+	1    2500 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 61EF71EC
+P 2500 4150
+F 0 "#PWR0106" H 2500 3900 50  0001 C CNN
+F 1 "GND" H 2505 3977 50  0000 C CNN
+F 2 "" H 2500 4150 50  0001 C CNN
+F 3 "" H 2500 4150 50  0001 C CNN
+	1    2500 4150
+	1    0    0    -1  
+$EndComp
+Text GLabel 2500 3850 0    50   Input ~ 0
+A0
+Text GLabel 2500 3950 0    50   Input ~ 0
+A1
+Text GLabel 2500 4050 0    50   Input ~ 0
+A2
 $EndSCHEMATC
