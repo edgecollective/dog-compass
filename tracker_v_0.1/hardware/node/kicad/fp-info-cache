@@ -83156,129 +83156,125 @@ footprints
 PCBFEAT-REV-040
 <b>Revision Level Field</b> - 40 mil<p>
 Set version with global board attribute '>REV'
-
+0
 0
 0
 0
 footprints
 PinSocket_1x04_P2.54mm_Vertical_no_silk
 Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-Through hole socket strip THT 1x04 2.54mm single row
+0
 0
 4
 4
 footprints
 RFM95
 
-
+0
 0
 16
 16
 footprints
 RGBLED_PLCC6
 <b>RGB LED PLCC-6</b><p>
-5.0mm x 5.0mm 1.5mm Pitch
-
+5
+0
 0
 6
 6
 footprints
 SOD-123
-<b>SOD-123</b>
-<p>Source: http://www.diodes.com/datasheets/ds30139.pdf</p>
-
+0
+0
+0
 0
 2
 2
 footprints
-SOIC8
-SOIC 8-Lead
-
+0
+0
+0
 0
 8
 8
 footprints
-SOLDERJUMPER_ARROW_NOPASTE
-
-
+0
+0
+0
 0
 2
 2
 footprints
-SOT23-5
-<b>Small Outline Transistor</b> - 5 Pin
-
+0
+0
+0
 0
 5
 5
 footprints
-SOT23-5L
-<b>Small Outline Transistor</b><p>
-package type OT
+0
+0
+0
 
 0
 5
 5
-footprints
-SOT23-R
-<b>SOT23</b> - Reflow soldering
+0
+0
+0
 
 0
 3
 3
-footprints
-TestPoint_Pad_1.0x1.0mm_no_silk
-SMD rectangular pad as test Point, square 1.0mm side length
+0
+0
+0
 test point SMD pad rectangle square
 0
 1
 1
-footprints
-WROOM32_SKINNY
-
+0
+0
+0
 
 0
 39
 39
-footprints
-feather
-Through hole straight pin header, 1x16, 2.54mm pitch, single row
+0
+0
+0
 Through hole pin header THT 1x16 2.54mm single row
 0
 28
 28
-footprints
-gps_neo6_blue_0
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
+0
+0
+0
 Through hole pin header THT 1x04 2.54mm single row
 0
 4
 4
-footprints
-gps_neo6m_black
-Through hole straight pin header, 1x05, 2.54mm pitch, single row
+0
+0
+0
 Through hole pin header THT 1x05 2.54mm single row
 0
 5
 5
-footprints
-sd2010
+0
+0
+0
 
-
 0
 0
 0
-footprints
-sd2010_dip
-6-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)
+0
+0
+6
 THT DIP DIL PDIP 2.54mm 7.62mm 300mil
 0
 6
 5
-footprints
-sparkfun_microsd_breakout
-Through hole straight socket strip, 1x07, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-Through hole socket strip THT 1x07 2.54mm single row
 0
-7
-7
+0
+0
