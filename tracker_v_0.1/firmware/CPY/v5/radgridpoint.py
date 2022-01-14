@@ -22,6 +22,24 @@ from adafruit_display_shapes.polygon import Polygon
 import terminalio
 import adafruit_rfm9x
 
+import adafruit_bno055
+
+# IMU 
+i2c = board.I2C()
+sensor = adafruit_bno055.BNO055_I2C(i2c)
+last_val = 0xFFFF
+
+def temperature():
+    global last_val  # pylint: disable=global-statement
+    result = sensor.temperature
+    if abs(result - last_val) == 128:
+        result = sensor.temperature
+        if abs(result - last_val) == 128:
+            return 0b00111111 & result
+    last_val = result
+    return result
+
+
 UNIT = 0.004166666666666667
 
 displayio.release_displays()
@@ -63,7 +81,7 @@ FONTSCALE = 2
 # Draw a label
 text = "        "
 text_area = Label(terminalio.FONT, text=text, color=BLACK)
-text_gps = Label(terminalio.FONT,text="\n23.23232",color=BLACK)
+text_temp = Label(terminalio.FONT,text="\n23.23232",color=BLACK)
 text_width = text_area.bounding_box[2] * FONTSCALE
 text_group = displayio.Group(
     scale=FONTSCALE,
@@ -72,12 +90,12 @@ text_group = displayio.Group(
     #display.height * 3 // 4,
 )
 text_group.append(text_area)  # Subgroup for text scaling
-text_group.append(text_gps)
+text_group.append(text_temp)
 cx = display.width // 2
 cy = display.width // 4
 r = 5 
-circle = Circle(cx, cy, r, fill=BLACK, outline=BLACK)
-
+circle = Circle(cx, cy, r, fill=WHITE, outline=BLACK)
+acirc = Circle(cx,cy,2,fill=BLACK,outline=BLACK)
 #line = Line(cx, cy, cx, cy + r, BLACK)
 
 line = Line(0,round(display.width/1.5),round(display.width),round(display.width/1.5),BLACK)
@@ -85,8 +103,10 @@ line2 = Line(0,round(display.width/1.5)+1,round(display.width),round(display.wid
 line3 = Line(0,round(display.width/1.5/2),round(display.width),round(display.width/1.5/2),BLACK)
 line4 = Line(round(display.width/2),0,round(display.width/2),round(display.width/1.5),BLACK)
 
+
 splash.append(rect)
 splash.append(circle)
+splash.append(acirc)
 splash.append(line)
 splash.append(line2)
 splash.append(line3)
@@ -159,7 +179,7 @@ def getLocator(lat, lon, precision):
     print ("locator=",locator)
     text_area.text = locator
 
-def showRect(lat,lon):
+def showRect(lat,lon,angle_deg):
     max_x = display.width
     max_y = round(display.width/1.5)
     
@@ -180,15 +200,19 @@ def showRect(lat,lon):
     print("lat:",lat,"lon:",lon)
     print("corners:",lon_left,lon_right,lat_top,lat_bottom)
 
-    x = round(xfrac*max_x)
-    y = round(yfrac*max_y)
+    x = xfrac*max_x
+    y = yfrac*max_y
     #r = 10
 
     print(x,y,r)
-    circle.x=x
-    circle.y=y
-    #circle.r=r
+    circle.x=round(x)
+    circle.y=round(y)
 
+    angle=math.radians(angle_deg)
+    dx=7*math.cos(angle)    
+    dy=7*math.sin(angle)
+    acirc.x=round(x+dx)
+    acirc.y=round(y+dy)
 
 last_print = time.monotonic()
 
@@ -198,7 +222,7 @@ while True:
     # as fast as data comes from the GPS unit (usually every second).
     # This returns a bool that's true if it parsed new data (you can ignore it
     # though if you don't care and instead look at the has_fix property).
-    
+    text_temp.text = "\n"+str(sensor.temperature)+" C"
     gps.update()
     # Every second print out current location details if there's a fix.
     current = time.monotonic()
@@ -218,7 +242,7 @@ while True:
 
             getLocator(TEST_LAT,TEST_LON,4)
             
-            showRect(TEST_LAT,TEST_LON)
+            showRect(TEST_LAT,TEST_LON,sensor.euler[0])
 
 
             continue
@@ -242,4 +266,4 @@ while True:
         # and might not be present.  Check if they're None before trying to use!
         #text_area.text = "lat: {0:.6f}".format(gps.latitude)
         getLocator(gps.latitude,gps.longitude,4)
-        showRect(gps.latitude,gps.longitude)
+        showRect(gps.latitude,gps.longitude,sensor.euler[0])
