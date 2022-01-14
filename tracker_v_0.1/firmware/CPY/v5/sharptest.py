@@ -1,5 +1,6 @@
 import board
 import displayio
+import digitalio
 import framebufferio
 import sharpdisplay
 from adafruit_display_shapes.rect import Rect
@@ -9,6 +10,10 @@ from adafruit_display_shapes.triangle import Triangle
 from adafruit_display_shapes.line import Line
 from adafruit_display_shapes.polygon import Polygon
 import terminalio
+
+q1 = digitalio.DigitalInOut(board.D9)
+q1.direction = digitalio.Direction.OUTPUT
+q1.value = True
 
 # Release the existing display, if any
 displayio.release_displays()
@@ -22,7 +27,7 @@ chip_select_pin = board.D5
 framebuffer = sharpdisplay.SharpMemoryFramebuffer(bus, chip_select_pin, width=144, height=168, baudrate=8000000)
 
 display = framebufferio.FramebufferDisplay(framebuffer)
-
+display.rotation = 180 
 from adafruit_display_text.label import Label
 from terminalio import FONT
 #label = Label(font=FONT, text="BLACK\nLIVES\nMATTER", x=120, y=120, scale=4, line_spacing=1.2)
