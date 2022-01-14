@@ -62,14 +62,16 @@ FONTSCALE = 2
 # Draw a label
 text = "        "
 text_area = Label(terminalio.FONT, text=text, color=BLACK)
+text_gps = Label(terminalio.FONT,text="\n23.23232",color=BLACK)
 text_width = text_area.bounding_box[2] * FONTSCALE
 text_group = displayio.Group(
     scale=FONTSCALE,
     x=display.width // 2 - text_width // 2,
-    y=display.height * 3 // 4,
+    y=round(display.width/1.5)+15
+    #display.height * 3 // 4,
 )
 text_group.append(text_area)  # Subgroup for text scaling
-
+text_group.append(text_gps)
 cx = display.width // 2
 cy = display.width // 4
 r = 5 
@@ -78,9 +80,12 @@ circle = Circle(cx, cy, r, fill=BLACK, outline=BLACK)
 #line = Line(cx, cy, cx, cy + r, BLACK)
 
 line = Line(0,round(display.width/1.5),round(display.width),round(display.width/1.5),BLACK)
+line2 = Line(0,round(display.width/1.5)+1,round(display.width),round(display.width/1.5)+1,BLACK)
+
 splash.append(rect)
 splash.append(circle)
 splash.append(line)
+splash.append(line2)
 splash.append(text_group)
 
 text_area.text="halibut"
