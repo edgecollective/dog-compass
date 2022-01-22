@@ -65,7 +65,7 @@ FONTSCALE = 2
 # Draw a label
 text = "        "
 text_area = Label(terminalio.FONT, text=text, color=BLACK)
-text_gps = Label(terminalio.FONT,text="\n23.23232",color=BLACK)
+#text_gps = Label(terminalio.FONT,text="\n23.23232",color=BLACK)
 text_width = text_area.bounding_box[2] * FONTSCALE
 text_group = displayio.Group(
     scale=FONTSCALE,
@@ -74,9 +74,21 @@ text_group = displayio.Group(
     #display.height * 3 // 4,
 )
 text_group.append(text_area)  # Subgroup for text scaling
-text_group.append(text_gps)
+
+coords_text_group = displayio.Group(
+    scale=1,
+    x=display.width // 2 - text_width // 2,
+    y=round(display.width/1.5)+30
+    #display.height * 3 // 4,
+)
+
+text_gps = Label(terminalio.FONT,text="",color=BLACK)
+coords_text_group.append(text_gps)
+
 cx = display.width // 2
 cy = display.width // 4
+cx= 0
+cy = 0
 r = 2 
 circle = Circle(cx, cy, r, fill=WHITE, outline=BLACK,stroke=1)
 
@@ -104,6 +116,7 @@ splash.append(line2)
 splash.append(line3)
 splash.append(line4)
 splash.append(text_group)
+splash.append(coords_text_group)
 splash.append(trace_balls)#splash.append(traceline)
 splash.append(circle)
 
@@ -278,7 +291,7 @@ while True:
 
             getLocator(TEST_LAT,TEST_LON,4)
             
-            showRect(TEST_LAT,TEST_LON)
+            #showRect(TEST_LAT,TEST_LON)
 
 
             continue
@@ -318,6 +331,7 @@ while True:
         # Some attributes beyond latitude, longitude and timestamp are optional
         # and might not be present.  Check if they're None before trying to use!
         #text_area.text = "lat: {0:.6f}".format(gps.latitude)
+        text_gps.text='\nLat:{0:.6f}'.format(gps.latitude)+'\nLon:{0:.6f}'.format(gps.longitude)
         getLocator(gps.latitude,gps.longitude,4)
         updateScreenCoords()
         #showRect(gps.latitude,gps.longitude)
