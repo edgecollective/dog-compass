@@ -22,8 +22,29 @@ from adafruit_display_shapes.polygon import Polygon
 import terminalio
 import adafruit_rfm9x
 import random
+from adafruit_debouncer import Debouncer
 
-MAXTRACE = 100
+button_A_pin = digitalio.DigitalInOut(board.A2)
+button_A_pin.direction = digitalio.Direction.INPUT
+button_A_pin.pull = digitalio.Pull.UP
+button_A = Debouncer(button_A_pin)
+
+button_B_pin = digitalio.DigitalInOut(board.A3)
+button_B_pin.direction = digitalio.Direction.INPUT
+button_B_pin.pull = digitalio.Pull.UP
+button_B = Debouncer(button_B_pin)
+
+button_C_pin = digitalio.DigitalInOut(board.A4)
+button_C_pin.direction = digitalio.Direction.INPUT
+button_C_pin.pull = digitalio.Pull.UP
+button_C = Debouncer(button_C_pin)
+
+current_locator = "..."
+
+traceCounter = 0
+TRACESKIP = 5
+SHOWTRACE = True
+MAXTRACE = 50
 UNIT = 0.004166666666666667
 
 displayio.release_displays()
@@ -120,7 +141,7 @@ splash.append(coords_text_group)
 splash.append(trace_balls)#splash.append(traceline)
 splash.append(circle)
 
-text_area.text="halibut"
+text_area.text=current_locator
 
 
 # Create a serial connection for the GPS connection using default speed and
@@ -183,8 +204,9 @@ def getLocator(lat, lon, precision):
                 locator += str(math.floor(rlon/(ydiv_arr[i+1]*2))) + str(math.floor(rlat/(ydiv_arr[i+1])))
             else:
                 locator += d2[math.floor(rlon/(ydiv_arr[i+1]*2))] + d2[math.floor(rlat/(ydiv_arr[i+1]))]
-    print ("locator=",locator)
-    text_area.text = locator
+    return(locator)
+    #print ("locator=",locator)
+    #text_area.text = locator
 
 def updateScreenCoords():
     lat=gps.latitude
@@ -211,73 +233,61 @@ def updateScreenCoords():
     #circle.x=x
     #circle.y=y
 
-    trace.append((x,y))
+    if (traceCounter % TRACESKIP ==0):
+        trace.append((x,y))
+        print("appending!")
 
     if(len(trace)>MAXTRACE):
-            trace.pop(0)
+        trace.pop(0)
 
     for i in range(len(trace)):
         b = trace_balls[i] # get a ball
-        b.x = trace[i][0]
-        b.y = trace[i][1]
+        if SHOWTRACE:
+            b.x = trace[i][0]
+            b.y = trace[i][1]
+        else:
+            b.x = 0
+            b.y = 0
 
     circle.x=x
     circle.y=y
-    
 
-
-
-
-def showRect(lat,lon):
-    max_x = display.width
-    max_y = round(display.width/1.5)
-    
-    myLat = lat
-    if (myLat > 85):
-        myLat = 85
-    if (myLat < -85):
-        myLat = -85
-
-    lon_left = math.floor(lon/(UNIT*2))*UNIT*2
-    lon_right = math.ceil(lon/(UNIT*2))*UNIT*2
-    lat_top = math.ceil(myLat/UNIT)*UNIT
-    lat_bottom = math.floor(myLat/UNIT)*UNIT
-
-    xfrac = (lon-lon_left)/(lon_right-lon_left)
-    yfrac = 1-(lat-lat_bottom)/(lat_top-lat_bottom)
-
-    print("lat:",lat,"lon:",lon)
-    print("corners:",lon_left,lon_right,lat_top,lat_bottom)
-
-    x = round(xfrac*max_x)
-    y = round(yfrac*max_y)
-    #r = 10
-
-    print(x,y,r)
-    circle.x=x
-    circle.y=y
-    #circle.r=r
-
-    print(trace)
-
-    #print("getScreenCoords",getScreenCoords(lat,lon)[0])
+    text_area.text=current_locator
 
 last_print = time.monotonic()
 
 
 
 while True:
+    button_A.update()
+    button_B.update()
+    button_C.update()
     # Make sure to call gps.update() every loop iteration and at least twice
     # as fast as data comes from the GPS unit (usually every second).
     # This returns a bool that's true if it parsed new data (you can ignore it
     # though if you don't care and instead look at the has_fix property).
+    if button_A.fell:
+        print('A!')
+        SHOWTRACE = not SHOWTRACE
+
+    if button_B.fell:
+        print("B!")
+        for i in range(len(trace)):
+            b = trace_balls[i] # get a ball
+            b.x = 0
+            b.y = 0
     
+    if button_C.fell:
+        print("C!")
+
     gps.update()
     # Every second print out current location details if there's a fix.
     current = time.monotonic()
     if current - last_print >= 1.0:
         last_print = current
 
+        traceCounter=traceCounter+1
+             
         #LED.value=False
         #rfm9x.send(bytes("Hello world!\r\n", "utf-8"))
         #LED.value=True
@@ -331,7 +341,17 @@ while True:
         # Some attributes beyond latitude, longitude and timestamp are optional
         # and might not be present.  Check if they're None before trying to use!
         #text_area.text = "lat: {0:.6f}".format(gps.latitude)
-        text_gps.text='\nLat:{0:.6f}'.format(gps.latitude)+'\nLon:{0:.6f}'.format(gps.longitude)
-        getLocator(gps.latitude,gps.longitude,4)
+        if (SHOWTRACE):
+            status = "trace on"
+        else:
+            status = "trace off"
+        text_gps.text=status+'\nLat:{0:.6f}'.format(gps.latitude)+'\nLon:{0:.6f}'.format(gps.longitude)
+        new_locator=getLocator(gps.latitude,gps.longitude,4)
+        if(new_locator != current_locator):
+            current_locator = new_locator
+            for i in range(len(trace)):
+                b = trace_balls[i] # get a ball
+                b.x = 0
+                b.y = 0 
         updateScreenCoords()
         #showRect(gps.latitude,gps.longitude)
