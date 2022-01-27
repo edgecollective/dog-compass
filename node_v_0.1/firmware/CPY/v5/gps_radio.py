@@ -92,8 +92,8 @@ while True:
         lat_str="{0:.6f}".format(gps.latitude)
         lon_str="{0:.6f}".format(gps.longitude)
         print(lat_str,lon_str)
-
-        rfm9x.send(bytes("Hello world!\r\n", "utf-8"))
+        send_str=lat_str+","+lon_str
+        rfm9x.send(bytes(send_str, "utf-8"))
         LED.value=True
         time.sleep(0.05)
         LED.value=False
