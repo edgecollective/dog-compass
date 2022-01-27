@@ -10,6 +10,7 @@ import busio
 import digitalio
 import adafruit_gps
 import adafruit_rfm9x
+import math
 
 q1 = digitalio.DigitalInOut(board.D9)
 q1.direction = digitalio.Direction.OUTPUT
@@ -63,8 +64,27 @@ gps = adafruit_gps.GPS(uart, debug=False)  # Use UART/pyserial
 
 # Set update rate to once a second (1hz) which is what you typically want.
 #gps.send_command(b"PMTK220,1000")
+PI = math.pi
 
-
+def getBearing(rlat,rlon,blat,blon):
+    lat1=float(blat)
+    lon1=float(blon)
+    lat2=float(rlat)
+    lon2=float(rlon)
+    phi1 = lat1 * PI/180.
+    phi2 = lat2 * PI/180.
+    lambda1 = lon1 * PI/180.
+    lambda2 = lon2 * PI/180.
+    y = math.sin(lambda2-lambda1)*math.cos(phi2)
+    x = math.cos(phi1)*math.sin(phi2) - math.sin(phi1)*math.cos(phi2)*math.cos(lambda2-lambda1)
+    theta = math.atan2(y,x)
+    bearing = math.fmod((theta*180/PI + 360),360)
+    
+    distance_meters = math.acos(math.sin(lat1*PI/180.)*math.sin(lat2*PI/180.) + math.cos(lat1*PI/180.)*math.cos(lat2*PI/180.)*math.cos(lon2*PI/180.-lon1*PI/180.) ) * 6371000
+    distance_feet = 3.281*distance_meters
+    
+    #degree_diff = heading-bearing
+    return(bearing)
 # Or decrease to once every two seconds by doubling the millisecond value.
 # Be sure to also increase your UART timeout above!
 # gps.send_command(b'PMTK220,2000')
@@ -101,8 +121,13 @@ while True:
             LED.value=False
             #print("Received (raw bytes): {0}".format(packet))
             packet_text = str(packet, "ascii")
-            #print("Received (ASCII): {0}".format(packet_text))
             packet_parts = packet_text.split(",")
             r_lat = packet_parts[0]
             r_lon = packet_parts[1]
             print("remote:",r_lat,r_lon)
+            rlat=42.41156609002178
+            rlon=-71.16533434544752
+            #r_lat=42.36055555884411
+            #r_lon=-71.03715071463135
+            bearing=getBearing(r_lat,r_lon,base_lat,base_lon)
+            print("bearing:",bearing)
