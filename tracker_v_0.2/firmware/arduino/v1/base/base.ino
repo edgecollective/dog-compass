@@ -263,6 +263,9 @@ if ((millis()-lastReading)>500) {
   Serial.print("\tZ: ");
   Serial.print(event.orientation.z, 4);
 
+  // I think this is right:
+  heading = event.orientation.x;
+  
   Serial.println();
   
   displayCalStatus();
@@ -271,7 +274,7 @@ if ((millis()-lastReading)>500) {
   delay(BNO055_SAMPLERATE_DELAY_MS);
   
  // get our own heading
- heading = 0.;
+ //heading = 0.;
  
   if (gps.location.isValid())
   {
@@ -351,7 +354,7 @@ uint8_t buf[sizeof(Payload)];
 
       
       /// TWERK
-      heading=0.;
+      //heading=0.;
       
       if(everGotGPS) { //then update graphic circle
 
