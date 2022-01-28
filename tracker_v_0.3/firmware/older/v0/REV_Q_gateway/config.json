@@ -1,0 +1,12 @@
+{
+"wifi_ssid": "Fios-7S5yS",
+"wifi_password": "whose44gel62has",
+"public_key": "pe7ng4kztt2n",
+"private_key": "u2a32sxixuau",
+"server": "bayou.pvos.org",
+"path": "/data/",
+"forcePPM": 412,
+"interval_seconds": 3,
+"loranet_pubkey": "zgpqdys5a9r3",
+"max_wifi_attempts":10
+}

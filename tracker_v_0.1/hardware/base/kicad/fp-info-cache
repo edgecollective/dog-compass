@@ -1,4 +1,4 @@
-19464901909337106
+19456735392598770
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -83090,13 +83090,6 @@ Micro SD
 14
 14
 footprints
-Display_adafruit_sharp_13
-Through hole straight socket strip, 1x09, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-Through hole socket strip THT 1x09 2.54mm single row
-0
-9
-9
-footprints
 ESP32-WROOM
 
 
@@ -83118,27 +83111,6 @@ FIDUCIAL_1MM
 1
 1
 footprints
-GPS_neo6_blue
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-footprints
-GPS_neo6_blue_2
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-footprints
-IMU_Ada_BNO005
-Through hole straight pin header, 1x06, 2.54mm pitch, single row
-Through hole pin header THT 1x06 2.54mm single row
-0
-6
-6
-footprints
 MOUNTINGHOLE_2.0_PLATED
 
 
@@ -83156,125 +83128,122 @@ footprints
 PCBFEAT-REV-040
 <b>Revision Level Field</b> - 40 mil<p>
 Set version with global board attribute '>REV'
-0
+
 0
 0
 0
 footprints
 PinSocket_1x04_P2.54mm_Vertical_no_silk
 Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-0
+Through hole socket strip THT 1x04 2.54mm single row
 0
 4
 4
 footprints
 RFM95
 
-0
+
 0
 16
 16
 footprints
 RGBLED_PLCC6
 <b>RGB LED PLCC-6</b><p>
-5
-0
+5.0mm x 5.0mm 1.5mm Pitch
+
 0
 6
 6
 footprints
 SOD-123
-0
-0
-0
+<b>SOD-123</b>
+<p>Source: http://www.diodes.com/datasheets/ds30139.pdf</p>
+
 0
 2
 2
 footprints
-0
-0
-0
+SOIC8
+SOIC 8-Lead
+
 0
 8
 8
 footprints
-0
-0
-0
+SOLDERJUMPER_ARROW_NOPASTE
+
+
 0
 2
 2
 footprints
-0
-0
-0
+SOT23-5
+<b>Small Outline Transistor</b> - 5 Pin
+
 0
 5
 5
 footprints
-0
-0
-0
+SOT23-5L
+<b>Small Outline Transistor</b><p>
+package type OT
 
 0
 5
 5
-0
-0
-0
+footprints
+SOT23-R
+<b>SOT23</b> - Reflow soldering
 
 0
 3
 3
+footprints
+TO-92_Inline_Horizontal1_wider
+TO-92 horizontal, leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
+to-92 sc-43 sc-43a sot54 PA33 transistor
 0
-0
-0
+3
+3
+footprints
+TestPoint_Pad_1.0x1.0mm_no_silk
+SMD rectangular pad as test Point, square 1.0mm side length
 test point SMD pad rectangle square
 0
 1
 1
-0
-0
-0
+footprints
+WROOM32_SKINNY
+
 
 0
 39
 39
-0
-0
-0
+footprints
+feather
+Through hole straight pin header, 1x16, 2.54mm pitch, single row
 Through hole pin header THT 1x16 2.54mm single row
 0
 28
 28
-0
-0
-0
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-0
-0
-0
-Through hole pin header THT 1x05 2.54mm single row
-0
-5
-5
-0
-0
-0
+footprints
+sd2010
+
 
 0
 0
 0
-0
-0
-6
+footprints
+sd2010_dip
+6-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)
 THT DIP DIL PDIP 2.54mm 7.62mm 300mil
 0
 6
 5
+footprints
+sparkfun_microsd_breakout
+Through hole straight socket strip, 1x07, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
+Through hole socket strip THT 1x07 2.54mm single row
 0
-0
-0
+7
+7

@@ -71,6 +71,8 @@ def getBearing(rlat,rlon,blat,blon):
     lon1=float(blon)
     lat2=float(rlat)
     lon2=float(rlon)
+    print(lat1,lon1,lat2,lon2)
+
     phi1 = lat1 * PI/180.
     phi2 = lat2 * PI/180.
     lambda1 = lon1 * PI/180.
@@ -82,7 +84,8 @@ def getBearing(rlat,rlon,blat,blon):
     
     distance_meters = math.acos(math.sin(lat1*PI/180.)*math.sin(lat2*PI/180.) + math.cos(lat1*PI/180.)*math.cos(lat2*PI/180.)*math.cos(lon2*PI/180.-lon1*PI/180.) ) * 6371000
     distance_feet = 3.281*distance_meters
-    
+    print("ft:",distance_feet)
+
     #degree_diff = heading-bearing
     return(bearing)
 # Or decrease to once every two seconds by doubling the millisecond value.

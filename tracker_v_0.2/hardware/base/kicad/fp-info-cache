@@ -1,4 +1,4 @@
-19464940559823106
+19583185565722680
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -83026,163 +83026,447 @@ varistor SIOV
 0
 2
 2
-footprints
+co2
 1X12_ROUND_MIN
 
 
 0
 12
 12
-footprints
+co2
 1X16_ROUND_MIN
 
 
 0
 16
 16
-footprints
+co2
 0603-NO
 
 
 0
 2
 2
-footprints
+co2
 0805-NO
 
 
 0
 2
 2
-footprints
+co2
 ADAFRUIT_3.5MM
 
 
 0
 0
 0
-footprints
+co2
 AIRLIFT
 
 
 0
 0
 0
-footprints
+co2
 BTN_KMR2_4.6X2.8
 
 
 0
 4
 4
-footprints
+co2
 DM3D-SF
 Micro SD
 Micro SD
 0
 14
 14
-footprints
+co2
 DM3D-SF_outline
 Micro SD
 Micro SD
 0
 14
 14
-footprints
+co2
 Display_adafruit_sharp_13
 Through hole straight socket strip, 1x09, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
 Through hole socket strip THT 1x09 2.54mm single row
 0
 9
 9
-footprints
+co2
 ESP32-WROOM
 
 
 0
 39
 39
-footprints
+co2
 FEATHERLOGO_MED
 
 
 0
 0
 0
-footprints
+co2
 FIDUCIAL_1MM
 
 
 0
 1
 1
-footprints
+co2
 GPS_neo6_blue
 Through hole straight pin header, 1x04, 2.54mm pitch, single row
 Through hole pin header THT 1x04 2.54mm single row
 0
 4
 4
-footprints
+co2
 GPS_neo6_blue_2
 Through hole straight pin header, 1x04, 2.54mm pitch, single row
 Through hole pin header THT 1x04 2.54mm single row
 0
 4
 4
-footprints
+co2
 IMU_Ada_BNO005
 Through hole straight pin header, 1x06, 2.54mm pitch, single row
 Through hole pin header THT 1x06 2.54mm single row
 0
 6
 6
-footprints
+co2
 MOUNTINGHOLE_2.0_PLATED
 
 
 0
 1
 1
-footprints
+co2
 MOUNTINGHOLE_2.5_PLATED
 
 
 0
 1
 1
-footprints
+co2
 PCBFEAT-REV-040
 <b>Revision Level Field</b> - 40 mil<p>
+Set version with global board attribute '>REV'
+0
+0
+0
+0
+co2
+PinSocket_1x04_P2.54mm_Vertical_no_silk
+Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
+0
+0
+4
+4
+co2
+PinSocket_1x08_P2.54mm_Vertical
+Through hole straight socket strip, 1x08, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
+0
+0
+8
+8
+co2
+RFM95
+
+0
+0
+16
+16
+co2
+RGBLED_PLCC6
+<b>RGB LED PLCC-6</b><p>
+5
+0
+0
+6
+6
+co2
+SOD-123
+0
+0
+0
+0
+2
+2
+co2
+0
+0
+0
+0
+8
+8
+co2
+0
+0
+0
+0
+2
+2
+co2
+0
+0
+0
+0
+5
+5
+co2
+0
+0
+0
+
+0
+5
+5
+0
+0
+0
+
+0
+3
+3
+0
+0
+0
+test point SMD pad rectangle square
+0
+1
+1
+0
+0
+0
+
+0
+39
+39
+0
+0
+0
+Through hole socket strip THT 1x08 2.54mm single row
+0
+8
+8
+0
+0
+0
+Through hole pin header THT 1x16 2.54mm single row
+0
+28
+28
+0
+0
+0
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+0
+0
+0
+Through hole pin header THT 1x05 2.54mm single row
+0
+5
+5
+0
+0
+0
+
+0
+0
+0
+0
+0
+6
+THT DIP DIL PDIP 2.54mm 7.62mm 300mil
+0
+6
+5
+0
+0
+0
+Through hole socket strip THT 1x07 2.54mm single row
+0
+7
+7
+0
+0
+0
+Through hole socket strip THT 1x04 2.54mm single row
+0
+4
+4
+0
+1
+0
+
+0
+12
+12
+0
+1
+0
+
+0
+16
+16
+0
+603
+0
+
+0
+2
+2
+0
+805
+0
+
+0
+2
+2
+0
+0
+0
+
+0
+0
+0
+0
+0
+0
+
+0
+0
+0
+0
+0
+0
+
+0
+4
+4
+0
+0
+0
+Micro SD
+0
+14
+14
+0
+0
+0
+Micro SD
+0
+14
+14
+0
+0
+0
+Through hole socket strip THT 1x09 2.54mm single row
+0
+9
+9
+0
+0
+0
+
+0
+39
+39
+0
+0
+0
+
+0
+0
+0
+0
+0
+0
+
+0
+1
+1
+0
+0
+0
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+0
+0
+0
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+0
+0
+0
+Through hole pin header THT 1x06 2.54mm single row
+0
+6
+6
+0
+0
+0
+
+0
+1
+1
+0
+0
+0
+
+0
+1
+1
+0
+0
+0
 Set version with global board attribute '>REV'
 
 0
 0
 0
-footprints
-PinSocket_1x04_P2.54mm_Vertical_no_silk
+0
+0
 Through hole straight socket strip, 1x04, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
 Through hole socket strip THT 1x04 2.54mm single row
 0
 4
 4
-footprints
-RFM95
+0
+0
+Through hole straight socket strip, 1x08, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
+Through hole socket strip THT 1x08 2.54mm single row
+0
+8
+8
+0
+0
 
 
 0
 16
 16
-footprints
-RGBLED_PLCC6
+0
+0
 <b>RGB LED PLCC-6</b><p>
 5.0mm x 5.0mm 1.5mm Pitch
 
 0
 6
 6
-footprints
+0
 SOD-123
 <b>SOD-123</b>
 <p>Source: http://www.diodes.com/datasheets/ds30139.pdf</p>
@@ -83190,95 +83474,318 @@ SOD-123
 0
 2
 2
-footprints
+dog
 SOIC8
 SOIC 8-Lead
 
 0
 8
 8
-footprints
+dog
 SOLDERJUMPER_ARROW_NOPASTE
 
 
 0
 2
 2
-footprints
+dog
 SOT23-5
 <b>Small Outline Transistor</b> - 5 Pin
 
 0
 5
 5
-footprints
+dog
 SOT23-5L
 <b>Small Outline Transistor</b><p>
+package type OT
+0
+0
+5
+5
+dog
+SOT23-R
+<b>SOT23</b> - Reflow soldering
+0
+0
+3
+3
+dog
+TestPoint_Pad_1.0x1.0mm_no_silk
+SMD rectangular pad as test Point, square 1.0mm side length
+0
+0
+1
+1
+dog
+WROOM32_SKINNY
+
+0
+0
+39
+39
+dog
+adafruit_piezo_12mm
+Through hole straight socket strip, 1x02, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
+0
+0
+2
+2
+dog
+feather
+Through hole straight pin header, 1x16, 2.54mm pitch, single row
+0
+0
+28
+28
+dog
+gps_neo6_blue_0
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+0
+0
+4
+4
+dog
+gps_neo6m_black
+Through hole straight pin header, 1x05, 2.54mm pitch, single row
+0
+0
+5
+5
+dog
+sd2010
+
+0
+0
+0
+0
+dog
+sd2010_dip
+6-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)
+0
+0
+6
+5
+dog
+sparkfun_microsd_breakout
+Through hole straight socket strip, 1x07, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
+0
+0
+7
+7
+footprints
+1X12_ROUND_MIN
+
+0
+0
+12
+12
+footprints
+1X16_ROUND_MIN
+
+0
+0
+16
+16
+footprints
+0603-NO
+
+0
+0
+2
+2
+footprints
+0805-NO
+
+0
+0
+2
+2
+footprints
+ADAFRUIT_3.5MM
+
+0
+0
+0
+0
+footprints
+AIRLIFT
+
+0
+0
+0
+0
+footprints
+BTN_KMR2_4.6X2.8
+
+0
+0
+4
+4
+footprints
+DM3D-SF
+Micro SD
+0
+0
+14
+14
+footprints
+DM3D-SF_outline
+Micro SD
+0
+0
+14
+14
+footprints
+ESP32-WROOM
+
+0
+0
+39
+39
+footprints
+FEATHERLOGO_MED
+
+0
+0
+0
+0
+footprints
+FIDUCIAL_1MM
+
+0
+0
+1
+1
+footprints
+MOUNTINGHOLE_2.0_PLATED
+
+0
+0
+1
+1
+footprints
+MOUNTINGHOLE_2.5_PLATED
+
+0
+0
+1
+1
+footprints
+PCBFEAT-REV-040
+<b>Revision Level Field</b> - 40 mil<p>
+0
+0
+0
+0
+0
+footprints
+PinSocket_1x04_P2.54mm_Vertical_no_silk
+0
+0
+0
+4
+4
+footprints
+RFM95
+0
+0
+0
+16
+16
+footprints
+RGBLED_PLCC6
+0
+5
+0
+0
+6
+6
+footprints
+0
+0
+0
+
+0
+2
+2
+0
+0
+0
+
+0
+8
+8
+0
+0
+0
+
+0
+2
+2
+0
+0
+0
+
+0
+5
+5
+0
+0
+0
 package type OT
 
 0
 5
 5
-footprints
-SOT23-R
+0
+0
 <b>SOT23</b> - Reflow soldering
 
 0
 3
 3
-footprints
-TestPoint_Pad_1.0x1.0mm_no_silk
+0
+0
+TO-92 horizontal, leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
+to-92 sc-43 sc-43a sot54 PA33 transistor
+0
+3
+3
+0
+0
 SMD rectangular pad as test Point, square 1.0mm side length
 test point SMD pad rectangle square
 0
 1
 1
-footprints
-WROOM32_SKINNY
+0
+0
 
 
 0
 39
 39
-footprints
-feather
+0
+0
 Through hole straight pin header, 1x16, 2.54mm pitch, single row
 Through hole pin header THT 1x16 2.54mm single row
 0
 28
 28
-footprints
-gps_neo6_blue_0
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
 0
-4
-4
-footprints
-gps_neo6m_black
-Through hole straight pin header, 1x05, 2.54mm pitch, single row
-Through hole pin header THT 1x05 2.54mm single row
 0
-5
-5
-footprints
-sd2010
 
 
 0
 0
 0
-footprints
-sd2010_dip
+0
+0
 6-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)
 THT DIP DIL PDIP 2.54mm 7.62mm 300mil
 0
 6
 5
-footprints
-sparkfun_microsd_breakout
-Through hole straight socket strip, 1x07, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-Through hole socket strip THT 1x07 2.54mm single row
 0
-7
-7
+0

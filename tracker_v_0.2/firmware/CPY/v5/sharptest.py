@@ -62,11 +62,27 @@ circle = Circle(cx, cy, r, fill=WHITE, outline=BLACK)
 
 line = Line(cx, cy, cx, cy + r, BLACK)
 
-palette = displayio.Palette(1)
-palette[0] = 0x125690
+num_balls = 20
+balls = displayio.Group() # group of balls
+#vees = []  # array of velocities for each ball
+for i in range(num_balls):
+    fill = BLACK 
+    b = Circle(display.width//2,display.height//2, 10, fill=fill, outline=0,stroke=1)
+    #v = [random.randint(-3,3), random.randint(-3,3)] # random initial velocity
+    #vees.append(v)
+    balls.append(b)
+screen.append(balls)  # add ball group to screen
+while True:
+    for i in range(len(balls)):
+        b = balls[i] # get a ball
+        v = vees[i]  # get its velocity
+        b.x = int(b.x + v[0]) # update ball position
+        b.y = int(b.y + v[1]) # update ball position
+        # if ball hits edge, bounce it off by reflecting velocity
+        if b.x <= 0 or b.x > display.width: v[0] = -v[0] + random.random()-0.5
+        if b.y <= 0 or b.y > display.height: v[1] = -v[1] + random.random()-0.5
+    time.sleep(0.01)
 
-points=[(5, 5), (100, 20), (20, 20), (20, 100)]
-polygon = vectorio.Polygon(pixel_shader=palette, points=points, x=0, y=0)
 
 splash.append(rect)
 splash.append(circle)
