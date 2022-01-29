@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name Adafruit_Monochrome_1.12in_128x128_OLED-eagle-import)(type Legacy)(uri ${KIPRJMOD}/Adafruit_Monochrome_1.12in_128x128_OLED-eagle-import.lib)(options "")(descr ""))
-)

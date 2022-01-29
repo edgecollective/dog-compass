@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "Adafruit Circuit Playground")(type KiCad)(uri "$(KIPRJMOD)/Adafruit Circuit Playground.pretty")(options "")(descr ""))
-)
