@@ -6,6 +6,8 @@ import adafruit_gps
 import adafruit_rfm9x
 import math
 
+PI = math.pi
+
 # mosfet to turn on the GPS module
 q1 = digitalio.DigitalInOut(board.D9)
 q1.direction = digitalio.Direction.OUTPUT
@@ -30,10 +32,8 @@ gps = adafruit_gps.GPS(uart, debug=False)  # Use UART/pyserial
 PI = math.pi
 
 # function to get bearing from remote node to base node, given each node's lat and lon
-
 # 'rlat, rlon' -- 'remote' node lat and lon
 # 'blat, blon' -- 'base' node (i.e., this node)'s lat and lon
-
 def getBearing(rlat,rlon,blat,blon):
     lat1=float(blat)
     lon1=float(blon)
