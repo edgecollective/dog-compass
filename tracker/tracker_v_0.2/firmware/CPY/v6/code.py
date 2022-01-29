@@ -58,7 +58,6 @@ def getBearing(rlat,rlon,blat,blon):
 
 
 # main loop
-
 last_print = time.monotonic()
 
 while True:
