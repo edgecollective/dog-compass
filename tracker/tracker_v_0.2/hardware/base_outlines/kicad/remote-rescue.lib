@@ -1,0 +1,46 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# DIODE-RocketScreamKicadLibrary-remote-rescue
+#
+DEF DIODE-RocketScreamKicadLibrary-remote-rescue D 0 40 N N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "DIODE-RocketScreamKicadLibrary-remote-rescue" 0 -100 50 H V C CNN
+F2 "RocketScreamKicadLibrary:SOD-123" 0 -200 60 H I C CNN
+F3 "" 0 0 60 H V C CNN
+$FPLIST
+ SOD-123
+$ENDFPLIST
+DRAW
+P 2 0 0 0 -50 50 -50 -50 N
+P 3 0 1 0 50 50 -50 0 50 -50 F
+X K 1 -200 0 150 R 50 50 1 1 P
+X A 2 200 0 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# SPEAKER_BUZZER5MM-Adafruit_Circuit_Playground-eagle-import-remote-rescue
+#
+DEF SPEAKER_BUZZER5MM-Adafruit_Circuit_Playground-eagle-import-remote-rescue SP 0 40 Y Y 1 L N
+F0 "SP" -150 250 59 H V L BNN
+F1 "SPEAKER_BUZZER5MM-Adafruit_Circuit_Playground-eagle-import-remote-rescue" -150 -125 59 H V L BNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 1 0 0 -100 0 -75 0 N
+P 2 1 0 0 -75 -25 -75 0 N
+P 2 1 0 0 -75 -25 75 -25 N
+P 2 1 0 0 -75 0 -75 100 N
+P 2 1 0 0 -75 100 -200 200 N
+P 2 1 0 0 75 -25 75 0 N
+P 2 1 0 0 75 0 75 100 N
+P 2 1 0 0 75 100 -75 100 N
+P 2 1 0 0 75 100 200 200 N
+P 2 1 0 0 100 0 75 0 N
+P 2 1 0 0 200 200 -200 200 N
+X + + -200 0 100 R 0 0 1 0 P
+X - - 200 0 100 L 0 0 1 0 P
+ENDDRAW
+ENDDEF
+#
+#End Library
