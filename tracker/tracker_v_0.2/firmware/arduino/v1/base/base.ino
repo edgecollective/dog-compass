@@ -69,8 +69,10 @@ long lastReading = 0;
 // The TinyGPS++ object
 TinyGPSPlus gps;
 
-float heading; // our heading
-float bearing; // bearing from remote node to us
+float heading=-1000; // our heading
+float bearing=-1000; // bearing from remote node to us
+float relative_bearing=-1000; // relative bearing between heading and bearing
+float distance_feet = -1000;
 
 // The serial connection to the GPS device
 //SoftwareSerial ss(RXPin, TXPin);
@@ -91,7 +93,7 @@ Adafruit_SharpMem display(&SPI, SHARP_SS, 144, 168,8000000);
 #define BLACK 0
 #define WHITE 1
 
-#define r 40
+#define r 30
 #define mx int(display_width/2)
 #define my int(display_height/3)
   
@@ -237,7 +239,8 @@ void setup()
 
 
   delay(1500);
-  
+
+  display.clearDisplay();
 }
 
 void loop()
@@ -265,28 +268,25 @@ if ((millis()-lastReading)>500) {
   Serial.print("heading:");
   Serial.println(heading);
 
+  // display updates ...
   display.clearDisplay();
+  
   drawCompass(heading);
-  drawStats();
+  
+  if(relative_bearing != -1000) {
+  drawRemote(relative_bearing);
+  }
+
+  if(distance_feet != -1000) {
+    drawStats();
+  }
+  
+
+  display.refresh();
   
   delay(BNO055_SAMPLERATE_DELAY_MS);
 
-    float lat1=42.411602;
-    float lon1 = -71.297781;
-    float lat2=42.415013;
-    float lon2=-71.204878;
-
-    float bearing = getBearing(lat1,lon1,lat2,lon2);
-
-    Serial.print("bearing:");
-    Serial.println(bearing);
-
-    float relativeBearing = bearing-heading;
-
-    Serial.print("relativeBearing:");
-    Serial.println(relativeBearing);
     
-    drawRemote(relativeBearing);
     
     Serial.println("=======");
   
@@ -358,8 +358,8 @@ uint8_t buf[sizeof(Payload)];
       lat2 = theData.lat;
       lon2 = theData.lon;
 
-      lat2 = 42.410533785024185;
-      lon2 = -71.13293291015793;
+      //lat2 = 42.410533785024185;
+      //lon2 = -71.13293291015793;
 
       Serial.println();
       Serial.print("lat2:");
@@ -367,12 +367,21 @@ uint8_t buf[sizeof(Payload)];
       Serial.print("; lon2:");
       Serial.println(lon2);
 
-      display.clearDisplay();
-      display.setTextSize(1);
-      display.setTextColor(BLACK);
-      display.setCursor(20,20);
-      display.print(lat1,6);
-      display.refresh();
+      //display.clearDisplay();
+
+      bearing = getBearing(lat1,lon1,lat2,lon2);
+  
+      Serial.print("bearing:");
+      Serial.println(bearing);
+  
+      relative_bearing = bearing-heading;
+  
+      Serial.print("relative_bearing:");
+      Serial.println(relative_bearing);
+
+      //drawCompass(heading);
+
+      //drawRemote(relativeBearing);
 
       
       /// TWERK
@@ -417,6 +426,9 @@ void drawCompass(float heading) {
   //display.drawCircle(mx,my,r);
   display.fillCircle(mx,my,r, BLACK);
   display.fillCircle(mx,my,int(r*.9), WHITE);
+
+  if (heading!=-1000) { // then draw the compass heading
+  
   int dx = round(r*sin((heading+180)*PI/180.));
   int dy = round(r*cos((heading+180)*PI/180. ));
   
@@ -425,13 +437,15 @@ void drawCompass(float heading) {
   //float north_heading = - heading;
   dx = round((r+15)*cos((heading-90)*PI/180.));
   dy = round((r+15)*sin((heading-90)*PI/180. ));
+  }
+
   
-  display.setTextSize(2);
+  //display.setTextSize(2);
   //display.setTextColor(BLACK);
   //display.setCursor(mx,my-(r+15));
   //display.write('N');
   
-  display.refresh();
+  //display.refresh();
 }
 
 void drawStats(){
@@ -439,23 +453,24 @@ void drawStats(){
   display.setTextSize(2);
   display.setTextColor(BLACK);
   display.setCursor(0,display_height/2+30);
-  display.println("  R:112 ft");
-  display.println("  H:23 ft");
-  display.println("  B:3.3 V");
+  display.print("  ");
+  display.print(distance_feet);
+  display.print("ft");
   
-  display.refresh();
+  //display.refresh();
 }
 
 void drawRemote(float relativeBearing) {
 
   int remoteRadius=8;
+  float radial_expansion = 1.2;
 
-  int dx = round(r*cos((relativeBearing-90)*PI/180.));
-  int dy = round(r*sin((relativeBearing-90)*PI/180. ));
+  int dx = round(r*radial_expansion*cos((relativeBearing-90)*PI/180.));
+  int dy = round(r*radial_expansion*sin((relativeBearing-90)*PI/180. ));
   
   display.fillCircle(mx+dx, my+dy, remoteRadius, BLACK);
   display.fillCircle(mx+dx, my+dy, int(remoteRadius*.7), WHITE);
-  display.refresh();
+  //display.refresh();
   
 }
 
@@ -473,7 +488,7 @@ float getBearing (float lat1, float lon1, float lat2, float lon2) {
         bearing = fmod((theta*180/PI + 360),360);
         
         float distance_meters = acos(sin(lat1*PI/180.)*sin(lat2*PI/180.) + cos(lat1*PI/180.)*cos(lat2*PI/180.)*cos(lon2*PI/180.-lon1*PI/180.) ) * 6371000;
-        float distance_feet = 3.281*distance_meters;
+        distance_feet = 3.281*distance_meters;
         
         float degree_diff = heading-bearing;
 
