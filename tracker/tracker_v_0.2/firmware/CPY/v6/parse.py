@@ -71,18 +71,11 @@ while True:
         if not gps.has_fix:
             print("Waiting for fix...")
             continue
-        print(gps._parse_sentence())
         base_lat = "{0:.6f}".format(gps.latitude)
         base_lon = "{0:.6f}".format(gps.longitude)
+
         packet=rfm9x.receive()
         if packet is not None:
-            LED.value=True
-            time.sleep(0.05)
-            LED.value=False
+            print(packet)
             packet_text = str(packet, "ascii")
-            packet_parts = packet_text.split(",")
-            r_lat = packet_parts[0]
-            r_lon = packet_parts[1]
-            print("remote:",r_lat,r_lon)
-            bearing=getBearing(r_lat,r_lon,base_lat,base_lon)
-            print("bearing:",bearing)
+            print(packet_text)

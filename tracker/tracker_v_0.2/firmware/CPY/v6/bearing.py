@@ -34,12 +34,21 @@ PI = math.pi
 # function to get bearing from remote node to base node, given each node's lat and lon
 # 'rlat, rlon' -- 'remote' node lat and lon
 # 'blat, blon' -- 'base' node (i.e., this node)'s lat and lon
+def getInt(fstr):
+    parts=fstr.split(".")
+    a=int(parts[0])
+    b=int(parts[1])
+    c=len(parts[1])
+    d=len(parts[0])
+    e=a*10**c+b
+    return(e)
+
 def getBearing(rlat,rlon,blat,blon):
     lat1=float(blat)
     lon1=float(blon)
     lat2=float(rlat)
     lon2=float(rlon)
-    print(lat1,lon1,lat2,lon2)
+    #print(lat1,lon1,lat2,lon2)
 
     phi1 = lat1 * PI/180.
     phi2 = lat2 * PI/180.
@@ -47,6 +56,8 @@ def getBearing(rlat,rlon,blat,blon):
     lambda2 = lon2 * PI/180.
     y = math.sin(lambda2-lambda1)*math.cos(phi2)
     x = math.cos(phi1)*math.sin(phi2) - math.sin(phi1)*math.cos(phi2)*math.cos(lambda2-lambda1)
+    
+    print(y,x) 
     theta = math.atan2(y,x)
     bearing = math.fmod((theta*180/PI + 360),360)
     
@@ -56,33 +67,36 @@ def getBearing(rlat,rlon,blat,blon):
 
     return(bearing)
 
+def getBearingInt(rlat,rlon,blat,blon):
+    lat1=getInt(blat)
+    lon1=getInt(blon)
+    lat2=getInt(rlat)
+    lon2=getInt(rlon)
+    #print(lat1,lon1,lat2,lon2)
 
-# main loop
-last_print = time.monotonic()
+    phi1 = lat1 * PI/180.
+    phi2 = lat2 * PI/180.
+    lambda1 = lon1 * PI/180.
+    lambda2 = lon2 * PI/180.
+    y = math.sin(lambda2-lambda1)*math.cos(phi2)
+    x = math.cos(phi1)*math.sin(phi2) - math.sin(phi1)*math.cos(phi2)*math.cos(lambda2-lambda1)
+    print(y,x)
+    theta = math.atan2(y,x)
+    bearing = math.fmod((theta*180/PI + 360),360)
+    
+    distance_meters = math.acos(math.sin(lat1*PI/180.)*math.sin(lat2*PI/180.) + math.cos(lat1*PI/180.)*math.cos(lat2*PI/180.)*math.cos(lon2*PI/180.-lon1*PI/180.) ) * 6371000
+    distance_feet = 3.281*distance_meters
+    print("ft:",distance_feet)
+
+    return(bearing)
 
 while True:
-    
-    gps.update()
-    
-    current = time.monotonic()
-    
-    if current - last_print >= 1.0:
-        last_print = current
-        if not gps.has_fix:
-            print("Waiting for fix...")
-            continue
-        print(gps._parse_sentence())
-        base_lat = "{0:.6f}".format(gps.latitude)
-        base_lon = "{0:.6f}".format(gps.longitude)
-        packet=rfm9x.receive()
-        if packet is not None:
-            LED.value=True
-            time.sleep(0.05)
-            LED.value=False
-            packet_text = str(packet, "ascii")
-            packet_parts = packet_text.split(",")
-            r_lat = packet_parts[0]
-            r_lon = packet_parts[1]
-            print("remote:",r_lat,r_lon)
-            bearing=getBearing(r_lat,r_lon,base_lat,base_lon)
-            print("bearing:",bearing)
+    lat1="42.411602"
+    lon1="-71.297781"
+    lat2="42.415013"
+    lon2="-71.204878"
+    #print(lat1,getInt(lat1))
+    print(getBearing(lat1,lon1,lat2,lon2))
+    print("=======") 
+    print(getBearingInt(lat1,lon1,lat2,lon2))
+    time.sleep(100)
