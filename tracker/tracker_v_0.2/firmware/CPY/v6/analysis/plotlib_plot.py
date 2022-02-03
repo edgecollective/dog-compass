@@ -30,10 +30,17 @@ def getBearing(lat1,lon1,lat2,lon2):
     return(bearing,distance_feet)
 
 #a = np.array([22,87,5,43,56,73,55,54,11,20,51,5,79,31,27]) 
-bins=np.arange(min(lats),max(lats),5)
+#bins=np.arange(min(lats),max(lats),5)
+bins=np.arange(min(lons),max(lons),5)
+
 #print(a)
+print("latitude:")
 print("std:",np.std(lats))
 print("std_err:",np.std(lats)/math.sqrt(len(lats)))
+print("---")
+print("longitude:")
+print("std_err:",np.std(lons)/math.sqrt(len(lons)))
+
 lon_fixed=-71.29804155012758
 
 lat_min=42.247000
@@ -42,6 +49,6 @@ lat_max=42.247600
 bearing,feet=getBearing(lat_min,lon_fixed,lat_max,lon_fixed)
 #plt.plot(lats)
 print("delta Feet:",feet)
-plt.hist(lats, bins = bins) 
-plt.title("hist(latitude)") 
+plt.hist(lons, bins = bins) 
+plt.title("hist(longitude)") 
 plt.show()
