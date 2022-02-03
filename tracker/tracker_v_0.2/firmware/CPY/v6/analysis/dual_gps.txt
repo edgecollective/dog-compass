@@ -1,6 +1,3 @@
-Auto-reload is on. Simply save files over USB to run them or enter REPL to disable.
-
-Press any key to enter the REPL. Use CTRL-D to reload.
 -71.297874 42.411953 42.411685 -71.297913
 -71.297874 42.411953 42.411685 -71.297884
 -71.297874 42.411957 42.411685 -71.297884
