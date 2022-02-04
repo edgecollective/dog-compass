@@ -33,6 +33,7 @@ Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28);
 #define SHARP_MOSI 24
 #define SHARP_SS   5
 
+int lastRSSI = 0;
 
 RHMesh *manager;
 
@@ -201,10 +202,10 @@ void setup()
   delay(1000);
 
   /* Display some basic information on this sensor */
-  displaySensorDetails();
+  //displaySensorDetails();
 
   /* Optional: Display current status */
-  displaySensorStatus();
+  //displaySensorStatus();
 
   bno.setExtCrystalUse(true);
 
@@ -235,7 +236,7 @@ void setup()
     }
   }
 
-  Serial.println("RF95 ready");
+  //Serial.println("RF95 ready");
 
 
   delay(1500);
@@ -263,10 +264,10 @@ if ((millis()-lastReading)>500) {
   bno.getEvent(&event);
   heading = event.orientation.x;
 
-  displayCalStatus();
-  Serial.println();
-  Serial.print("heading:");
-  Serial.println(heading);
+  //displayCalStatus();
+  //Serial.println();
+  //Serial.print("heading:");
+  //Serial.println(heading);
 
   // display updates ...
   display.clearDisplay();
@@ -277,9 +278,8 @@ if ((millis()-lastReading)>500) {
   drawRemote(relative_bearing);
   }
 
-  if(distance_feet != -1000) {
-    drawStats();
-  }
+  drawStats();
+  
   
 
   display.refresh();
@@ -288,7 +288,7 @@ if ((millis()-lastReading)>500) {
 
     
     
-    Serial.println("=======");
+    //Serial.println("=======");
   
 
     
@@ -346,6 +346,10 @@ uint8_t buf[sizeof(Payload)];
   if (manager->recvfromAckTimeout((uint8_t *)buf, &len, waitTime, &from)) {  // this runs until we receive some message
       // entering this block means the message is for us
 
+    lastRSSI = rf95.lastRssi();
+    
+    //Serial.print("lastRssi:");
+    //Serial.println(rf95.lastRssi());
     digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
     delay(10);                       // wait for a second
     digitalWrite(LED, LOW);    // turn the LED off by making the voltage LOW
@@ -353,68 +357,48 @@ uint8_t buf[sizeof(Payload)];
     
      // the rest of this code only runs if we were the intended recipient; which means we're the gateway
       theData = *(Payload*)buf;
-
       
       lat2 = theData.lat;
       lon2 = theData.lon;
 
-      //lat2 = 42.410533785024185;
-      //lon2 = -71.13293291015793;
-
-      Serial.println();
-      Serial.print("lat2:");
-      Serial.print(lat2);
-      Serial.print("; lon2:");
-      Serial.println(lon2);
-
-      //display.clearDisplay();
-
-      bearing = getBearing(lat1,lon1,lat2,lon2);
-  
-      Serial.print("bearing:");
-      Serial.println(bearing);
-  
-      relative_bearing = bearing-heading;
-  
-      Serial.print("relative_bearing:");
-      Serial.println(relative_bearing);
-
-      //drawCompass(heading);
-
-      //drawRemote(relativeBearing);
+      
+      //Boston
+      //lat2 = 42.36560028078578;
+      //lon2 = -71.06311192678076;
 
       
-      /// TWERK
-      //heading=0.;
+      //Serial.print("rlat:");
+      //Serial.print(lat2,6);
+      //Serial.print("rlon:");
+      //Serial.println(lon2,6);
+
       
-      if(everGotGPS) { //then update graphic circle
+      if(everGotGPS) { 
 
-        float R = 6371000; // metres
-        float phi1 = lat1 * PI/180.; // φ, λ in radians
-        float phi2 = lat2 * PI/180.;
-        float lambda1 = lon1 * PI/180.;
-        float lambda2 = lon2 * PI/180.;
-        float y = sin(lambda2-lambda1)*cos(phi2);
-        float x = cos(phi1)*sin(phi2) - sin(phi1)*cos(phi2)*cos(lambda2-lambda1);
-        float theta = atan2(y,x);
-        bearing = fmod((theta*180/PI + 360),360);
+        Serial.print(lat2,6);
+        Serial.print(",");
+        Serial.print(lon2,6);
+        Serial.print(",");
+        Serial.print(lat1,6);
+        Serial.print(",");
+        Serial.print(lon1,6);
+        Serial.print(",");
+        Serial.print(distance_feet);
+        Serial.print(",");
+        Serial.print(lastRSSI);
+        Serial.print(",");
         
-        float distance_meters = acos(sin(lat1*PI/180.)*sin(lat2*PI/180.) + cos(lat1*PI/180.)*cos(lat2*PI/180.)*cos(lon2*PI/180.-lon1*PI/180.) ) * 6371000;
-        float distance_feet = 3.281*distance_meters;
+        bearing = getBearing(lat1,lon1,lat2,lon2);
+  
+        Serial.println(bearing,3);
+        //Serial.print("bearing:");
         
-        float degree_diff = heading-bearing;
-
-        Serial.print("degree_diff:");
-        Serial.println(degree_diff);
-        Serial.print("distance_feet:");
-        Serial.println(distance_feet);
-
-        //int dx = round(r*sin((degree_diff+90)*PI/180.));
-        //int dy = round(r*cos((degree_diff+90)*PI/180. ));
-        
+        relative_bearing = bearing-heading;
+    
+        //Serial.print("relative_bearing:");
+        //Serial.println(relative_bearing,6);
+      
        
-        //delay(4000);
-        
       }
 }
 
@@ -450,12 +434,27 @@ void drawCompass(float heading) {
 
 void drawStats(){
 
-  display.setTextSize(2);
+  uint8_t system, gyro, accel, mag;
+  system = gyro = accel = mag = 0;
+  bno.getCalibration(&system, &gyro, &accel, &mag);
+
+
+  display.setTextSize(1);
   display.setTextColor(BLACK);
-  display.setCursor(0,display_height/2+30);
-  display.print("  ");
-  display.print(distance_feet);
+  display.setCursor(0,0);
+  display.print(" gps:");
+  display.print(everGotGPS);
+  display.print("; mag:");
+  display.print(mag);
+  display.print("; rssi:");
+  display.print(lastRSSI);
+  if(distance_feet != -1000) {
+  display.setTextSize(2);
+  display.setCursor(0,display_height/2+60);
+  display.print("    ");
+  display.print(distance_feet,0);
   display.print("ft");
+  }
   
   //display.refresh();
 }
@@ -492,10 +491,10 @@ float getBearing (float lat1, float lon1, float lat2, float lon2) {
         
         float degree_diff = heading-bearing;
 
-        Serial.print("degree_diff:");
-        Serial.println(degree_diff);
-        Serial.print("distance_feet:");
-        Serial.println(distance_feet);
+        //Serial.print("degree_diff:");
+        //Serial.println(degree_diff);
+        //Serial.print("distance_feet:");
+        //Serial.println(distance_feet);
 
         //int dx = round(r*sin((degree_diff+90)*PI/180.));
         //int dy = round(r*cos((degree_diff+90)*PI/180. ));
