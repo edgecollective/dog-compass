@@ -44,7 +44,7 @@ waypoint_num = 0
 current_locator = "..."
 
 traceCounter = 0
-TRACESKIP = 10 
+TRACESKIP = 1
 SHOWTRACE = True
 MAXTRACE = 50
 UNIT = 0.004166666666666667
@@ -263,7 +263,7 @@ def updateScreenCoords():
 
     #text_area.text=current_locator
     text_area.text=str(waypoint_num)
-    
+
 last_print = time.monotonic()
 
 
